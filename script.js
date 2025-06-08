@@ -99,7 +99,7 @@ slides.forEach((_, index) => {
 function updateIndicators() {
     document.querySelectorAll('.indicator').forEach((indicator, index) => {
         indicator.classList.toggle('active', index === currentSlide);
-        indicator.setAttribute('aria-selected', index === currentSlide);
+        indicator.setAttribute('aria-pressed', index === currentSlide);
     });
 }
 
