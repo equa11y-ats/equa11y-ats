@@ -26,7 +26,6 @@ overlay.addEventListener('click', () => {
 const searchInput = document.getElementById('search');
 const searchResults = document.getElementById('search-results');
 
-// Sample search results data
 const searchData = [
     { title: "Accessibility Testing Services", link: "#" },
     { title: "WCAG Compliance Guidelines", link: "#" },
@@ -65,7 +64,6 @@ searchInput.addEventListener('input', function() {
     }
 });
 
-// Close search results when clicking outside
 document.addEventListener('click', function(e) {
     if (!searchResults.contains(e.target) && e.target !== searchInput) {
         searchResults.style.display = 'none';
@@ -77,8 +75,6 @@ let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const indicatorsContainer = document.querySelector('.carousel-indicators');
 const totalSlides = slides.length;
-let isPlaying = true;
-let intervalId = null;
 
 // Create indicators
 slides.forEach((_, index) => {
@@ -87,6 +83,7 @@ slides.forEach((_, index) => {
     indicator.tabIndex = 0;
     indicator.setAttribute('role', 'button');
     indicator.setAttribute('aria-label', `Go to slide ${index + 1}`);
+    indicator.setAttribute('title', `Slide ${index + 1}`);
     indicator.addEventListener('click', () => showSlide(index));
     indicator.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -104,59 +101,19 @@ function updateIndicators() {
 }
 
 function showSlide(n) {
-    currentSlide = (n + totalSlides) % totalSlides;
-    slides.forEach((slide, index) => {
-        const isActive = index === currentSlide;
-        slide.classList.toggle('active', isActive);
-        slide.setAttribute('aria-hidden', !isActive);
-        
-        // Manage focusable elements for accessibility
-        const focusableElements = slide.querySelectorAll('a, button, input');
-        focusableElements.forEach(el => {
-            if (isActive) {
-                el.removeAttribute('tabindex');
-            } else {
-                el.setAttribute('tabindex', '-1');
-            }
-        });
-    });
-    updateIndicators();
+    // Hide current slide
+    slides[currentSlide].classList.remove('active');
+    slides[currentSlide].setAttribute('aria-hidden', 'true');
     
-    // Reset interval timer
-    if (isPlaying) {
-        clearInterval(intervalId);
-        startInterval();
-    }
+    // Update current slide index
+    currentSlide = (n + totalSlides) % totalSlides;
+    
+    // Show new slide
+    slides[currentSlide].classList.add('active');
+    slides[currentSlide].setAttribute('aria-hidden', 'false');
+    
+    updateIndicators();
 }
-
-// Start auto-rotation
-function startInterval() {
-    // Clear any existing interval first
-    clearInterval(intervalId);
-    intervalId = setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 8000);
-}
-
-// Stop auto-rotation
-function stopInterval() {
-    clearInterval(intervalId);
-}
-
-// Play/Pause functionality
-const playPauseBtn = document.querySelector('.carousel-btn.play-pause');
-playPauseBtn.addEventListener('click', function() {
-    isPlaying = !isPlaying;
-    if (isPlaying) {
-        this.innerHTML = '<i class="fas fa-pause"></i>';
-        this.setAttribute('aria-label', 'Pause carousel');
-        startInterval();
-    } else {
-        this.innerHTML = '<i class="fas fa-play"></i>';
-        this.setAttribute('aria-label', 'Play carousel');
-        stopInterval();
-    }
-});
 
 // Button Controls
 document.querySelector('.prev').addEventListener('click', () => showSlide(currentSlide - 1));
@@ -168,23 +125,26 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') showSlide(currentSlide + 1);
 });
 
-// Pause on hover
-const carousel = document.querySelector('.carousel');
-carousel.addEventListener('mouseenter', () => {
-    if (isPlaying) {
-        stopInterval();
-    }
-});
-carousel.addEventListener('mouseleave', () => {
-    if (isPlaying) {
-        startInterval();
-    }
-});
-
 // Initialize
 updateIndicators();
 showSlide(0);
-startInterval();
+
+// Auto-advance carousel
+let carouselInterval = setInterval(() => {
+    showSlide(currentSlide + 1);
+}, 5000);
+
+// Pause auto-advance on hover
+document.querySelector('.carousel').addEventListener('mouseenter', () => {
+    clearInterval(carouselInterval);
+});
+
+// Resume auto-advance when mouse leaves
+document.querySelector('.carousel').addEventListener('mouseleave', () => {
+    carouselInterval = setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 5000);
+});
 
 // Disability Statistics Data
 const disabilityData = {
@@ -243,11 +203,9 @@ document.getElementById('region-select').addEventListener('change', function() {
     const region = this.value;
     const data = disabilityData[region];
     
-    // Update total and percentage
     document.getElementById('total-disabled').textContent = data.total;
     document.getElementById('percentage-disabled').textContent = data.percentage;
     
-    // Update chart bars
     const types = data.types;
     document.querySelector('.chart-bar.mobility').style.height = types.mobility;
     document.querySelector('.chart-bar.mobility').setAttribute('data-percentage', types.mobility);
@@ -260,7 +218,6 @@ document.getElementById('region-select').addEventListener('change', function() {
     document.querySelector('.chart-bar.other').style.height = types.other;
     document.querySelector('.chart-bar.other').setAttribute('data-percentage', types.other);
     
-    // Update source
     document.querySelectorAll('.stat-source').forEach(el => {
         el.textContent = `Source: ${data.source}`;
     });
@@ -279,11 +236,9 @@ document.getElementById('audit-form').addEventListener('submit', function(e) {
     const website = websiteInput.value.trim();
     const email = emailInput.value.trim();
     
-    // Reset messages
     errorMessage.style.display = 'none';
     successMessage.style.display = 'none';
     
-    // Validate inputs with specific error messages
     if (!website) {
         errorMessage.textContent = 'Website URL is required. Please enter your website address (e.g., https://example.com)';
         errorMessage.style.display = 'block';
@@ -291,7 +246,6 @@ document.getElementById('audit-form').addEventListener('submit', function(e) {
         return;
     }
     
-    // Simple URL validation
     const urlRegex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
     if (!urlRegex.test(website)) {
         errorMessage.textContent = 'Invalid website URL format. Please enter a valid URL starting with http:// or https:// (e.g., https://example.com)';
@@ -307,7 +261,6 @@ document.getElementById('audit-form').addEventListener('submit', function(e) {
         return;
     }
     
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         errorMessage.textContent = 'Invalid email format. Please enter a valid email address (e.g., name@company.com)';
@@ -316,15 +269,12 @@ document.getElementById('audit-form').addEventListener('submit', function(e) {
         return;
     }
     
-    // Simulate email sending
     console.log('Sending audit request to company email:');
     console.log('Website:', website);
     console.log('Email:', email);
     
-    // Show success message
     successMessage.style.display = 'block';
     
-    // Reset form
     websiteInput.value = '';
     emailInput.value = '';
 });
