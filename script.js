@@ -22,10 +22,29 @@ overlay.addEventListener('click', () => {
     document.body.style.overflow = '';
 });
 
-// Search functionality
-const searchInput = document.getElementById('search');
-const searchResults = document.getElementById('search-results');
+// Mobile search functionality
+const mobileSearchButton = document.querySelector('.mobile-search-button');
+const mobileSearchExpanded = document.getElementById('mobile-search-expanded');
 
+mobileSearchButton.addEventListener('click', () => {
+    mobileSearchExpanded.classList.toggle('active');
+    if (mobileSearchExpanded.classList.contains('active')) {
+        document.getElementById('mobile-search').focus();
+    }
+});
+
+// Close mobile search when clicking outside
+document.addEventListener('click', function(e) {
+    const isClickInside = mobileSearchExpanded.contains(e.target) || 
+                          e.target === mobileSearchButton ||
+                          mobileSearchButton.contains(e.target);
+    
+    if (!isClickInside) {
+        mobileSearchExpanded.classList.remove('active');
+    }
+});
+
+// Search functionality
 const searchData = [
     { title: "Accessibility Testing Services", link: "#" },
     { title: "WCAG Compliance Guidelines", link: "#" },
@@ -34,39 +53,67 @@ const searchData = [
     { title: "Contact Us", link: "#construction" }
 ];
 
-searchInput.addEventListener('input', function() {
-    const searchTerm = this.value.trim().toLowerCase();
-    searchResults.innerHTML = '';
+function performSearch(inputId, resultsId) {
+    const searchInput = document.getElementById(inputId);
+    const searchResults = document.getElementById(resultsId);
     
-    if (searchTerm.length === 0) {
-        searchResults.style.display = 'none';
-        return;
-    }
-    
-    const filteredResults = searchData.filter(item => 
-        item.title.toLowerCase().includes(searchTerm)
-    );
-    
-    if (filteredResults.length > 0) {
-        filteredResults.forEach(result => {
-            const link = document.createElement('a');
-            link.href = result.link;
-            link.textContent = result.title;
-            searchResults.appendChild(link);
-        });
-        searchResults.style.display = 'block';
-    } else {
-        const noResults = document.createElement('div');
-        noResults.textContent = 'No results found';
-        noResults.classList.add('no-results');
-        searchResults.appendChild(noResults);
-        searchResults.style.display = 'block';
-    }
-});
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.trim().toLowerCase();
+        searchResults.innerHTML = '';
+        
+        if (searchTerm.length === 0) {
+            searchResults.style.display = 'none';
+            return;
+        }
+        
+        const filteredResults = searchData.filter(item => 
+            item.title.toLowerCase().includes(searchTerm)
+        );
+        
+        if (filteredResults.length > 0) {
+            filteredResults.forEach(result => {
+                const link = document.createElement('a');
+                link.href = result.link;
+                link.textContent = result.title;
+                link.classList.add('search-result-item');
+                searchResults.appendChild(link);
+            });
+            searchResults.style.display = 'block';
+        } else {
+            const noResults = document.createElement('div');
+            noResults.textContent = 'No results found';
+            noResults.classList.add('no-results');
+            searchResults.appendChild(noResults);
+            searchResults.style.display = 'block';
+        }
+    });
+}
 
+performSearch('search', 'search-results');
+performSearch('mobile-search', 'mobile-search-results');
+
+// Close search results when clicking outside
 document.addEventListener('click', function(e) {
-    if (!searchResults.contains(e.target) && e.target !== searchInput) {
-        searchResults.style.display = 'none';
+    const desktopSearch = document.getElementById('search');
+    const desktopResults = document.getElementById('search-results');
+    const desktopButton = document.querySelector('.search-button');
+    
+    const mobileSearch = document.getElementById('mobile-search');
+    const mobileResults = document.getElementById('mobile-search-results');
+    const mobileButton = document.querySelector('.mobile-search-button');
+    
+    // Desktop search
+    if (!desktopResults.contains(e.target) && 
+        e.target !== desktopSearch && 
+        e.target !== desktopButton) {
+        desktopResults.style.display = 'none';
+    }
+    
+    // Mobile search
+    if (!mobileResults.contains(e.target) && 
+        e.target !== mobileSearch && 
+        e.target !== mobileButton) {
+        mobileResults.style.display = 'none';
     }
 });
 
@@ -128,23 +175,6 @@ document.addEventListener('keydown', (e) => {
 // Initialize
 updateIndicators();
 showSlide(0);
-
-// Auto-advance carousel
-let carouselInterval = setInterval(() => {
-    showSlide(currentSlide + 1);
-}, 5000);
-
-// Pause auto-advance on hover
-document.querySelector('.carousel').addEventListener('mouseenter', () => {
-    clearInterval(carouselInterval);
-});
-
-// Resume auto-advance when mouse leaves
-document.querySelector('.carousel').addEventListener('mouseleave', () => {
-    carouselInterval = setInterval(() => {
-        showSlide(currentSlide + 1);
-    }, 5000);
-});
 
 // Disability Statistics Data
 const disabilityData = {
