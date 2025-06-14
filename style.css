@@ -141,11 +141,6 @@ header {
     outline: none;
 }
 
-.search-button:focus {
-    outline: 2px solid var(--focus-color);
-    outline-offset: 2px;
-}
-
 .search-button {
     background: #ffffff;
     color: #003366;
@@ -288,31 +283,40 @@ nav a:focus::after {
 
 .slides-container {
     position: relative;
+    display: flex;
+    overflow: hidden;
     height: 500px;
 }
 
 .slide {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: row;
+    min-height: 0;
+    transition: transform 0.5s ease-in-out;
     position: absolute;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    display: flex;
 }
 
 .slide.active {
     opacity: 1;
+    position: relative;
 }
 
 .slide-content {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     padding: 3rem;
     background: var(--secondary-color);
     color: var(--white);
-    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
 }
 
 .slide-content h2 {
@@ -330,14 +334,19 @@ nav a:focus::after {
 
 .slide-image {
     flex: 1;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+    background: #f0f0f0;
+    min-width: 0;
 }
 
 .slide-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 .cta-button {
@@ -393,7 +402,6 @@ nav a:focus::after {
     padding: 0.8rem;
     border-radius: 50%;
     cursor: pointer;
-    transition: all 0.3s ease;
     width: 45px;
     height: 45px;
     display: flex;
@@ -401,6 +409,29 @@ nav a:focus::after {
     justify-content: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     color: var(--secondary-color);
+    position: relative;
+}
+
+.carousel-btn::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.carousel-btn:hover::after {
+    opacity: 1;
 }
 
 .carousel-btn:hover, .carousel-btn:focus {
@@ -438,6 +469,29 @@ nav a:focus::after {
     background: rgba(255,255,255,0.5);
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.indicator::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.indicator:hover::after {
+    opacity: 1;
 }
 
 .indicator.active {
@@ -973,6 +1027,29 @@ footer a:focus {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-links a::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark-color);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.social-links a:hover::after {
+    opacity: 1;
 }
 
 .social-links a:hover {
@@ -1094,7 +1171,6 @@ footer a:focus {
     100% { transform: scale(1); }
 }
 
-/* Hamburger menu improvements */
 .mobile-menu {
     display: none;
     position: fixed;
@@ -1113,6 +1189,7 @@ footer a:focus {
 
 .mobile-menu.active {
     transform: translateX(0);
+    display: block;
 }
 
 .mobile-menu ul {
@@ -1162,7 +1239,6 @@ footer a:focus {
     display: block;
 }
 
-/* Responsive adjustments */
 @media (max-width: 992px) {
     .process-step {
         flex: 0 0 calc(33.33% - 2rem);
@@ -1191,58 +1267,44 @@ footer a:focus {
         margin-top: 1rem;
         justify-content: center;
     }
-
+    
     .slides-container {
         height: auto;
         min-height: 600px;
     }
-
+    
     .slide {
         flex-direction: column;
+        position: relative;
+        height: auto;
     }
-
+    
     .slide-content {
-        padding: 2rem;
-        flex: none;
-        height: 50%;
+        order: 1;
     }
-
+    
     .slide-image {
-        height: 50%;
+        min-height: 300px;
+        order: 2;
     }
-
+    
     .slide-content h2 {
         font-size: 1.8rem;
     }
-
+    
     .slide-content p {
         font-size: 1rem;
     }
-
-    .stats-display {
-        flex-direction: column;
-    }
     
-    .stat-card {
-        min-width: 100%;
-    }
-    
-    .bar-chart {
-        height: 250px;
-    }
-    
-    .chart-bar {
-        width: 40px;
+    .carousel-controls-bottom {
+        position: relative;
+        background: var(--secondary-color);
     }
 }
 
 @media (max-width: 576px) {
     .process-step {
         flex: 0 0 100%;
-    }
-    
-    .slides-container {
-        height: 650px;
     }
 
     .section-heading {
@@ -1281,8 +1343,20 @@ footer a:focus {
         width: 100%;
     }
     
+    .slide-content {
+        padding: 1.5rem;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .slide-content p {
+        font-size: 0.9rem;
+    }
+    
     .slide-image {
-        height: 250px;
+        min-height: 250px;
     }
 }
 
@@ -1290,10 +1364,6 @@ footer a:focus {
     .logo {
         width: 250px;
         height: auto;
-    }
-    
-    .slide-image {
-        height: 200px;
     }
     
     .chart-bar {
@@ -1306,7 +1376,6 @@ footer a:focus {
     }
 }
 
-/* High zoom level adjustments */
 @media (max-width: 400px) {
     .header-right {
         flex-direction: column;
@@ -1332,5 +1401,18 @@ footer a:focus {
     .indicator {
         width: 10px;
         height: 10px;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.2rem;
+    }
+    
+    .slide-content p {
+        font-size: 0.85rem;
+    }
+    
+    .cta-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
