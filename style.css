@@ -86,7 +86,7 @@ header {
     display: none;
     justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
+    gap: -0.5rem;
     width: 100%;
 }
 
