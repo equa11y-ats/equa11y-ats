@@ -1028,7 +1028,7 @@ footer a:focus {
         
         .auth-switch a {
             color: var(--accent-color);
-            text-decoration: none;
+            text-decoration: underline;
             font-weight: 600;
             transition: all 0.3s ease;
         }
