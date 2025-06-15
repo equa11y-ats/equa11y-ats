@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>equA11Y aTs - Accessibility Testing Solutions</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="ADA & WCAG compliant accessibility testing services. Manual audits, automated testing, and developer training for inclusive digital experiences.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header id="main-header">
+        <div class="mobile-header-top">
+            <button class="hamburger" aria-expanded="false" aria-label="Navigation Menu" id="hamburger-btn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+			<a href="https://www.equa11yats.com/" aria-current="page">
+				<img src="Logo.png" 
+                 alt="equA11Y aTs logo, Home page" 
+                 class="mobile-logo">
+			</a>
+            
+            <div class="mobile-header-right">
+                <div class="mobile-search-container">
+                    <button class="mobile-search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="mobile-search-expanded" id="mobile-search-expanded">
+                        <input type="search" id="mobile-search" placeholder="Search..." aria-label="Search">
+                        <div class="search-results" id="mobile-search-results"></div>
+                    </div>
+                </div>
+                <a href="#login" class="mobile-login-link" aria-label="Login to your account">
+                    <i class="fas fa-user"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="desktop-header">
+			<a href="https://www.equa11yats.com/" aria-current="page">
+				<img src="Logo.png" 
+					 alt="equA11Y aTs logo, Home Page" 
+					 class="logo">
+			</a>		 
+            <div class="header-right">
+                <div class="search-container" role="search" aria-label="Search our website">
+                    <input type="search" id="search" placeholder="Search..." aria-label="Search">
+                    <button class="search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+                <a href="#login" class="login-link" aria-label="Login to your account">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <ul id="main-navigation">
+                <li><a href="#construction">Our Services</a></li>
+                <li><a href="#construction">What is Accessibility</a></li>
+                <li><a href="#construction">Why Accessibility</a></li>
+                <li><a href="#construction">A11Y Library</a></li>
+                <li><a href="https://foxoneusa.com/">Foxone USA</a></li>
+                <li><a href="#construction">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-menu" id="close-menu" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="Home.html" aria-current="page">Home</a></li>
+            <li><a href="#construction">Our Services</a></li>
+            <li><a href="#construction">What is Accessibility</a></li>
+            <li><a href="#construction">Why Accessibility</a></li>
+            <li><a href="#construction">A11Y Library</a></li>
+            <li><a href="#construction">Foxone USA</a></li>
+            <li><a href="#construction">Contact Us</a></li>
+        </ul>
+    </div>
+
+   <h1 class="sr-only">Login to equa11y ATS</h1>
+<div class="auth-container">
+<!-- Login Section -->
+<div class="auth-box" id="login-section">
+<h1>Login</h1>
+<form class="auth-form" id="login-form">
+<div class="form-group">
+<label for="login-email">Email</label>
+<input id="login-email" name="email" placeholder="Enter your email" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="login-password">Password</label>
+<input id="login-password" name="password" placeholder="Enter your password" required="" type="password"/>
+</div>
+<button class="submit-btn" type="submit">Login</button>
+</form>
+<div class="auth-switch">
+<p>Are you new here? <a href="#" id="show-create-account">Create an account</a></p>
+</div>
+</div>
+<!-- Create Account Section -->
+<div class="auth-box create-account-section" id="create-account-section">
+<h1>Create Account</h1>
+<form class="auth-form" id="create-account-form">
+<div class="form-group">
+<label for="first-name">First Name</label>
+<input id="first-name" name="firstName" placeholder="Enter your first name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="last-name">Last Name</label>
+<input id="last-name" name="lastName" placeholder="Enter your last name" required="" type="text"/>
+</div>
+<div class="form-group">
+<label for="create-email">Email</label>
+<input id="create-email" name="email" placeholder="Enter your email" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="create-password">Password</label>
+<input id="create-password" name="password" placeholder="Create a password" required="" type="password"/>
+</div>
+<button class="submit-btn" type="submit">Create Account</button>
+</form>
+<div class="auth-switch">
+<p>Already have an account? <a href="#" id="show-login">Login</a></p>
+</div>
+</div>
+</div>
+</main>
+
+
+    <footer aria-labelledby="footer-heading">
+        <div class="footer-content">
+            <div>
+                <h3 id="footer-heading">Company</h3>
+                <a href="#construction">About Us</a>
+                <a href="#construction">Our Team</a>
+                <a href="#construction">Careers</a>
+                <a href="#construction">Accessibility Statement</a>
+                <a href="#construction">Privacy Policy</a>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <a href="#construction">Accessibility Audits</a>
+                <a href="#construction">Training</a>
+                <a href="#construction">Consulting</a>
+                <a href="#construction">Remediation</a>
+                <a href="#construction">Compliance Support</a>
+            </div>
+            <div>
+                <h3>Reach Us</h3>
+                <a href="mailto:equa11yats@gmail.com">equa11yats@gmail.com</a>
+                <a href="tel:+19493318409">+1 (949) 331-8409</a>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 FoxOne equA11Y aTs. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>
