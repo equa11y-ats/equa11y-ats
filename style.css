@@ -85,7 +85,7 @@ header {
 .mobile-header-top {
     display: none;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     gap: -0.5rem;
     width: 100%;
 }
