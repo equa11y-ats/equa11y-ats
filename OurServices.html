@@ -12,40 +12,51 @@
 <link href="OurServices_style.css" rel="stylesheet"/></head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
-<header id="main-header">
-<div class="mobile-header-top">
-<button aria-expanded="false" aria-label="Navigation Menu" class="hamburger" id="hamburger-btn">
-<span class="hamburger-line"></span>
-<span class="hamburger-line"></span>
-<span class="hamburger-line"></span>
-</button>
-<a aria-current="page" href="https://www.equa11yats.com/">
-<img alt="equA11Y aTs logo, Home page" class="mobile-logo" src="Logo.png"/>
-</a>
-<div class="mobile-header-right">
-<div class="mobile-search-container">
-<button aria-label="Search" class="mobile-search-button">
-<i aria-hidden="true" class="fas fa-search"></i>
-</button>
-<div class="mobile-search-expanded" id="mobile-search-expanded">
-<input aria-label="Search" id="mobile-search" placeholder="Search..." type="search"/>
-<div class="search-results" id="mobile-search-results"></div>
-<div class="desktop-header">
-<a aria-current="page" href="https://www.equa11yats.com/">
-<img alt="equA11Y aTs logo, Home Page" class="logo" src="Logo.png"/>
-</a>
-<div class="header-right">
-<div aria-label="Search our website" class="search-container" role="search">
-<input aria-label="Search" id="search" placeholder="Search..." type="search"/>
-<button aria-label="Search" class="search-button">
-<i aria-hidden="true" class="fas fa-search"></i>
-</button>
-<div class="search-results" id="search-results"></div>
-</div>
-<a aria-label="Login to your account" class="login-link" href="#login">Login</a>
-</div>
-</div>
-</header>
+ <header id="main-header">
+        <div class="mobile-header-top">
+            <button class="hamburger" aria-expanded="false" aria-label="Navigation Menu" id="hamburger-btn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+			<a href="https://www.equa11yats.com/" aria-current="page">
+				<img src="Logo.png" 
+                 alt="equA11Y aTs logo, Home page" 
+                 class="mobile-logo">
+			</a>
+            
+            <div class="mobile-header-right">
+                <div class="mobile-search-container">
+                    <button class="mobile-search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="mobile-search-expanded" id="mobile-search-expanded">
+                        <input type="search" id="mobile-search" placeholder="Search..." aria-label="Search">
+                        <div class="search-results" id="mobile-search-results"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="desktop-header">
+			<a href="https://www.equa11yats.com/" aria-current="page">
+				<img src="Logo.png" 
+					 alt="equA11Y aTs logo, Home Page" 
+					 class="logo">
+			</a>		 
+            <div class="header-right">
+                <div class="search-container" role="search" aria-label="Search our website">
+                    <input type="search" id="search" placeholder="Search..." aria-label="Search">
+                    <button class="search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+                
+	    </div>
+        </div>
+    </header>
+
 <nav aria-label="Main navigation">
 <div class="nav-container">
 <ul id="main-navigation">
