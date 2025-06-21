@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | equA11Y aTs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="OurTeam_style.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <div id="aria-announce" class="sr-announce" aria-live="polite" aria-atomic="true"></div>
+
+    <header id="main-header">
+        <div class="desktop-header">
+            <a href="https://www.equa11yats.com/" aria-current="page">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>         
+            <div class="header-right">
+                <div class="search-container" role="search" aria-label="Search our website">
+                    <input type="search" id="search" placeholder="Search..." aria-label="Search">
+                    <button class="search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <ul id="main-navigation">
+                <li><a href="OurServices.html">Our Services</a></li>
+                <li><a href="What is Accessibility.html">What is Accessibility</a></li>
+                <li><a href="Why Accessibility.html">Why Accessibility</a></li>
+                <li><a href="A11Y Library.html">A11Y Library</a></li>
+                <li><a href="Foxone USA.html">Foxone USA</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="team-hero" aria-labelledby="team-heading">
+            <div class="hero-content">
+                <h1 id="team-heading">Meet Our Accessibility Experts</h1>
+                <p class="hero-subtitle">A team of passionate professionals dedicated to creating inclusive digital experiences for everyone.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <p>Years Combined Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1000+</div>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99%</div>
+                        <p>Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="team-illustration">
+                    <div class="person person1"></div>
+                    <div class="person person2"></div>
+                    <div class="person person3"></div>
+                    <div class="person person4"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Team -->
+        <section class="team-section" aria-labelledby="leadership-heading">
+            <h2 id="leadership-heading" class="section-heading">Leadership Team</h2>
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="photo-placeholder"></div>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Johnson</h3>
+                        <p class="role">CEO & Founder</p>
+                        <p class="bio">With 15+ years in digital accessibility, Sarah founded equA11Y aTs to create truly inclusive digital experiences. She holds multiple IAAP certifications.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="photo-placeholder"></div>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Michael Chen</h3>
+                        <p class="role">CTO & Head of Innovation</p>
+                        <p class="bio">Michael leads our technical strategy with expertise in WCAG implementation and assistive technology. He's a certified DHS Trusted Tester.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="photo-placeholder"></div>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Email" title="Email"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Priya Sharma</h3>
+                        <p class="role">Director of Client Success</p>
+                        <p class="bio">Priya ensures our solutions exceed client expectations. She has a background in UX design and accessibility advocacy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessibility Experts -->
+        <section class="team-section" aria-labelledby="experts-heading">
+            <h2 id="experts-heading" class="section-heading">Accessibility Experts</h2>
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="photo-placeholder"></div>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>David Rodriguez</h3>
+                        <p class="role">Senior Accessibility Specialist</p>
+                        <p class="bio">David specializes in screen reader testing and mobile accessibility. He's fluent in JAWS, NVDA, and VoiceOver.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="photo-placeholder"></div>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Emily Park</h3>
+                        <p class="role">Accessibility Developer</p>
+                        <p class="bio">Emily transforms accessibility reports into code solutions. She's an expert in ARIA implementation and accessible JavaScript.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="photo-placeholder"></div>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>James Wilson</h3>
+                        <p class="role">Accessibility Auditor</p>
+                        <p class="bio">James conducts comprehensive accessibility audits with a focus on WCAG 2.2 compliance and usability testing.</p>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <div class="member-photo">
+                        <div class="photo-placeholder"></div>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Website" title="Personal Blog"><i class="fas fa-globe"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Fatima Al-Mansoori</h3>
+                        <p class="role">Accessibility Trainer</p>
+                        <p class="bio">Fatima develops and delivers accessibility training programs for developers, designers, and content creators.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values -->
+        <section class="values-section" aria-labelledby="values-heading">
+            <h2 id="values-heading" class="section-heading">Our Core Values</h2>
+            <div class="values-container">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Inclusion First</h3>
+                    <p>We believe digital experiences should be accessible to everyone, regardless of ability.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovative Solutions</h3>
+                    <p>We constantly explore new approaches to solve complex accessibility challenges.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Empathy-Driven</h3>
+                    <p>We approach our work with deep understanding of the user experience.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>We provide honest assessments and practical solutions, never cutting corners.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Our Team -->
+        <section class="join-section" aria-labelledby="join-heading">
+            <div class="join-content">
+                <h2 id="join-heading">Join Our Team of Accessibility Champions</h2>
+                <p>We're always looking for passionate individuals who want to make the digital world more inclusive.</p>
+                <a href="Careers.html" class="cta-button">View Open Positions</a>
+            </div>
+            <div class="join-illustration">
+                <div class="illustration-person"></div>
+                <div class="illustration-dots"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div>
+                <h3>Company</h3>
+                <a href="About Us.hmlt">About Us</a>
+                <a href="Our Team.html" aria-current="page">Our Team</a>
+                <a href="Careers.html">Careers</a>
+                <a href="Accessibility Statement.html">Accessibility Statement</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <a href="Accessibility Testing.html">Accessibility Testing</a>
+                <a href="Training.html">Training</a>
+                <a href="Consulting.html">Consulting</a>
+                <a href="Remediation.html">Remediation</a>
+                <a href="Compliance Support.html">Compliance Support</a>
+            </div>
+            <div>
+                <h3>Reach Us</h3>
+                <a href="mailto:equa11yats@gmail.com">equa11yats@gmail.com</a>
+                <a href="tel:+19493318409">+1 (949) 331-8409</a>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 equA11Y aTs. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="OurTeam_script.js"></script>
+</body>
+</html>
