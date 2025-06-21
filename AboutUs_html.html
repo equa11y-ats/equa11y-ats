@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | equA11Y aTs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="AboutUs_style.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <div id="aria-announce" class="sr-announce" aria-live="polite" aria-atomic="true"></div>
+
+    <header id="main-header">
+        <div class="mobile-header-top">
+            <button class="hamburger" aria-expanded="false" aria-label="Navigation Menu" id="hamburger-btn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="https://www.equa11yats.com/" aria-current="page">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>
+            
+            <div class="mobile-header-right">
+                <div class="mobile-search-container">
+                    <button class="mobile-search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="mobile-search-expanded" id="mobile-search-expanded">
+                        <input type="search" id="mobile-search" placeholder="Search..." aria-label="Search">
+                        <div class="search-results" id="mobile-search-results"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="desktop-header">
+            <a href="https://www.equa11yats.com/" aria-current="page">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>         
+            <div class="header-right">
+                <div class="search-container" role="search" aria-label="Search our website">
+                    <input type="search" id="search" placeholder="Search..." aria-label="Search">
+                    <button class="search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <ul id="main-navigation">
+                <li><a href="OurServices.html">Our Services</a></li>
+                <li><a href="What is Accessibility.html">What is Accessibility</a></li>
+                <li><a href="Why Accessibility.html">Why Accessibility</a></li>
+                <li><a href="A11Y Library.html">A11Y Library</a></li>
+                <li><a href="Foxone USA.html">Foxone USA</a></li>
+                <li><a href="AboutUs.html" aria-current="page">About Us</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-menu" id="close-menu" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="OurServices.html">Our Services</a></li>
+            <li><a href="What is Accessibility.html">What is Accessibility</a></li>
+            <li><a href="Why Accessibility.html">Why Accessibility</a></li>
+            <li><a href="A11Y Library.html">A11Y Library</a></li>
+            <li><a href="Foxone USA.html">Foxone USA</a></li>
+            <li><a href="AboutUs.html" aria-current="page">About Us</a></li>
+            <li><a href="Contact Us.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="about-hero" aria-labelledby="about-hero-heading">
+            <div class="hero-content">
+                <h1 id="about-hero-heading">Building an Inclusive Digital World</h1>
+                <p>At equA11Y aTs, we believe everyone deserves equal access to digital experiences.</p>
+                <a href="#our-story" class="cta-button">Our Story <i class="fas fa-arrow-down"></i></a>
+            </div>
+        </section>
+
+        <!-- Our Story -->
+        <section class="our-story" id="our-story" aria-labelledby="our-story-heading">
+            <div class="container">
+                <h2 id="our-story-heading">Our Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2015</div>
+                        <div class="timeline-content">
+                            <h3>Foundation</h3>
+                            <p>Founded by accessibility experts with a vision to make the digital world inclusive for everyone.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2018</div>
+                        <div class="timeline-content">
+                            <h3>First Major Client</h3>
+                            <p>Partnered with a Fortune 500 company to overhaul their digital accessibility strategy.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2020</div>
+                        <div class="timeline-content">
+                            <h3>Global Expansion</h3>
+                            <p>Expanded our services to Europe and Asia, helping international clients achieve compliance.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2023</div>
+                        <div class="timeline-content">
+                            <h3>Industry Recognition</h3>
+                            <p>Awarded "Top Accessibility Service Provider" by the Global Web Standards Consortium.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Values -->
+        <section class="mission-values" aria-labelledby="mission-values-heading">
+            <div class="container">
+                <h2 id="mission-values-heading">Our Mission & Values</h2>
+                <div class="mission-content">
+                    <div class="mission-statement">
+                        <h3>Mission Statement</h3>
+                        <p>To empower organizations to create digital experiences that are accessible to everyone, regardless of ability, through innovative solutions and expert guidance.</p>
+                    </div>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <i class="fas fa-universal-access"></i>
+                            <h4>Inclusion First</h4>
+                            <p>We prioritize accessibility in all our solutions and interactions.</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Integrity</h4>
+                            <p>We uphold the highest ethical standards in all our work.</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Innovation</h4>
+                            <p>We continuously explore new approaches to accessibility challenges.</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-users"></i>
+                            <h4>Collaboration</h4>
+                            <p>We work alongside our clients to achieve shared success.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Team -->
+        <section class="leadership" aria-labelledby="leadership-heading">
+            <div class="container">
+                <h2 id="leadership-heading">Leadership Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://via.placeholder.com/300x300?text=Alex+Johnson" alt="Alex Johnson, Founder & CEO">
+                        </div>
+                        <div class="member-info">
+                            <h3>Alex Johnson</h3>
+                            <p class="position">Founder & CEO</p>
+                            <p class="bio">20+ years in accessibility consulting. DHS Section 508 certified.</p>
+                            <a href="#" class="linkedin-link" aria-label="Connect with Alex Johnson on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://via.placeholder.com/300x300?text=Maria+Garcia" alt="Maria Garcia, Chief Technology Officer">
+                        </div>
+                        <div class="member-info">
+                            <h3>Maria Garcia</h3>
+                            <p class="position">Chief Technology Officer</p>
+                            <p class="bio">Former lead developer at major tech firm. WCAG 2.2 expert.</p>
+                            <a href="#" class="linkedin-link" aria-label="Connect with Maria Garcia on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://via.placeholder.com/300x300?text=David+Chen" alt="David Chen, Director of Operations">
+                        </div>
+                        <div class="member-info">
+                            <h3>David Chen</h3>
+                            <p class="position">Director of Operations</p>
+                            <p class="bio">Specializes in scaling accessibility programs for enterprise clients.</p>
+                            <a href="#" class="linkedin-link" aria-label="Connect with David Chen on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://via.placeholder.com/300x300?text=Sarah+Williams" alt="Sarah Williams, Head of Training">
+                        </div>
+                        <div class="member-info">
+                            <h3>Sarah Williams</h3>
+                            <p class="position">Head of Training</p>
+                            <p class="bio">Developed award-winning accessibility training programs.</p>
+                            <a href="#" class="linkedin-link" aria-label="Connect with Sarah Williams on LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="achievements" aria-labelledby="achievements-heading">
+            <div class="container">
+                <h2 id="achievements-heading">Our Impact</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Client Retention Rate</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Team Members</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Compliance Success</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="about-cta" aria-labelledby="about-cta-heading">
+            <div class="container">
+                <h2 id="about-cta-heading">Join Us in Creating Inclusive Digital Experiences</h2>
+                <div class="cta-buttons">
+                    <a href="Careers.html" class="cta-button">View Career Opportunities</a>
+                    <a href="Contact Us.html" class="cta-button secondary">Contact Our Team</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div>
+                <h3>Company</h3>
+                <a href="AboutUs.html" aria-current="page">About Us</a>
+                <a href="Our Team.html">Our Team</a>
+                <a href="Careers.html">Careers</a>
+                <a href="Accessibility Statement.html">Accessibility Statement</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <a href="Accessibility Testing.html">Accessibility Testing</a>
+                <a href="Training.html">Training</a>
+                <a href="Consulting.html">Consulting</a>
+                <a href="Remediation.html">Remediation</a>
+                <a href="Compliance Support.html">Compliance Support</a>
+            </div>
+            <div>
+                <h3>Reach Us</h3>
+                <a href="mailto:equa11yats@gmail.com">equa11yats@gmail.com</a>
+                <a href="tel:+19493318409">+1 (949) 331-8409</a>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 equA11Y aTs. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="AboutUs_script.js"></script>
+</body>
+</html>
