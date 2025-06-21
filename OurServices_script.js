@@ -1,79 +1,19 @@
-
-        // Mobile menu functionality with focus trapping
+// Mobile menu functionality
         const hamburgerBtn = document.getElementById('hamburger-btn');
-        const mobileMenu = document.createElement('div');
-        mobileMenu.className = 'mobile-menu';
-        mobileMenu.id = 'mobile-menu';
-        mobileMenu.innerHTML = `
-            <button class="close-menu" id="close-menu" aria-label="Close menu">
-                <i class="fas fa-times"></i>
-            </button>
-            <ul>
-                <li><a href="Home.html" aria-current="page">Home</a></li>
-                <li><a href="#construction">Our Services</a></li>
-                <li><a href="#construction">What is Accessibility</a></li>
-                <li><a href="#construction">Why Accessibility</a></li>
-                <li><a href="#construction">A11Y Library</a></li>
-                <li><a href="#construction">Foxone USA</a></li>
-                <li><a href="#construction">Contact Us</a></li>
-            </ul>
-        `;
-        document.body.appendChild(mobileMenu);
-        
+        const mobileMenu = document.getElementById('mobile-menu');
         const closeMenuBtn = document.getElementById('close-menu');
-        const overlay = document.createElement('div');
-        overlay.className = 'overlay';
-        overlay.id = 'overlay';
-        document.body.appendChild(overlay);
-
-        let focusableElements;
-        let firstFocusableElement;
-        let lastFocusableElement;
-
-        function trapFocus(element) {
-            focusableElements = Array.from(
-                element.querySelectorAll(
-                    'a[href], button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
-                )
-            ).filter(el => !el.disabled && el.getAttribute('tabindex') !== '-1');
-            
-            firstFocusableElement = focusableElements[0];
-            lastFocusableElement = focusableElements[focusableElements.length - 1];
-            
-            firstFocusableElement.focus();
-            
-            mobileMenu.addEventListener('keydown', handleFocusTrap);
-        }
-
-        function handleFocusTrap(e) {
-            if (e.key !== 'Tab') return;
-            
-            if (e.shiftKey) {
-                if (document.activeElement === firstFocusableElement) {
-                    e.preventDefault();
-                    lastFocusableElement.focus();
-                }
-            } else {
-                if (document.activeElement === lastFocusableElement) {
-                    e.preventDefault();
-                    firstFocusableElement.focus();
-                }
-            }
-        }
+        const overlay = document.getElementById('overlay');
 
         hamburgerBtn.addEventListener('click', () => {
             mobileMenu.classList.add('active');
             overlay.classList.add('active');
             document.body.style.overflow = 'hidden';
-            trapFocus(mobileMenu);
         });
 
         function closeMobileMenu() {
             mobileMenu.classList.remove('active');
             overlay.classList.remove('active');
             document.body.style.overflow = '';
-            mobileMenu.removeEventListener('keydown', handleFocusTrap);
-            hamburgerBtn.focus();
         }
 
         closeMenuBtn.addEventListener('click', closeMobileMenu);
@@ -83,7 +23,7 @@
         const mobileSearchButton = document.querySelector('.mobile-search-button');
         const mobileSearchExpanded = document.getElementById('mobile-search-expanded');
 
-        if(mobileSearchButton) {
+        if (mobileSearchButton) {
             mobileSearchButton.addEventListener('click', () => {
                 mobileSearchExpanded.classList.toggle('active');
                 if (mobileSearchExpanded.classList.contains('active')) {
@@ -92,97 +32,179 @@
             });
         }
 
-        // Close mobile search when clicking outside
-        document.addEventListener('click', function(e) {
-            const isClickInside = mobileSearchExpanded && 
-                (mobileSearchExpanded.contains(e.target) || 
-                e.target === mobileSearchButton ||
-                mobileSearchButton.contains(e.target);
+        // Search functionality
+        const searchData = [
+            { title: "Accessibility Testing Services", link: "#", description: "Comprehensive testing solutions to ensure WCAG compliance" },
+            { title: "WCAG Compliance Guidelines", link: "#", description: "Latest WCAG standards and implementation best practices" },
+            { title: "ADA Compliance Checklist", link: "#", description: "Essential steps for ADA website compliance" },
+            { title: "Accessibility Training Programs", link: "#", description: "Training for developers, designers, and content creators" },
+            { title: "Contact Us", link: "#", description: "Get in touch with our accessibility experts" }
+        ];
+
+        const pageSections = [
+            { id: "services-banner", title: "Our Services", description: "Overview of our accessibility solutions" },
+            { id: "core-services", title: "Core Services", description: "Detailed information about our core offerings" },
+            { id: "service-process", title: "Our Process", description: "Our comprehensive service delivery process" },
+            { id: "additional-services", title: "Additional Services", description: "Specialized services we offer" }
+        ];
+
+        function performSearch(searchTerm) {
+            const resultsContainer = document.getElementById('search-results-content');
+            const resultsTitle = document.getElementById('search-results-title');
+            const searchResultsSection = document.getElementById('search-results-container');
+            const announceElement = document.getElementById('aria-announce');
             
-            if (!isClickInside && mobileSearchExpanded) {
-                mobileSearchExpanded.classList.remove('active');
+            // Show search results
+            searchResultsSection.style.display = 'block';
+            
+            // Update title
+            resultsTitle.textContent = `Search Results for: "${searchTerm}"`;
+            announceElement.textContent = `Search results for "${searchTerm}" are displayed.`;
+            
+            // Clear previous results
+            resultsContainer.innerHTML = '';
+            
+            // Search page sections
+            const sectionResults = pageSections.filter(section => 
+                section.title.toLowerCase().includes(searchTerm) || 
+                section.description.toLowerCase().includes(searchTerm)
+            );
+            
+            // Search content data
+            const contentResults = searchData.filter(item => 
+                item.title.toLowerCase().includes(searchTerm) || 
+                item.description.toLowerCase().includes(searchTerm)
+            );
+            
+            const allResults = [...sectionResults, ...contentResults];
+            
+            if (allResults.length === 0) {
+                resultsContainer.innerHTML = `
+                    <div class="no-results-message">
+                        <i class="fas fa-search fa-3x"></i>
+                        <p>Sorry, no results found for your search: <strong>"${searchTerm}"</strong></p>
+                        <p>Try searching for something else or check out these popular topics:</p>
+                        
+                        <div class="suggested-searches">
+                            <h3>Popular Searches:</h3>
+                            <ul>
+                                <li>Accessibility Testing</li>
+                                <li>WCAG Compliance</li>
+                                <li>Training Programs</li>
+                                <li>ADA Checklist</li>
+                                <li>Contact Us</li>
+                            </ul>
+                        </div>
+                        
+                        <button class="cta-button" id="clear-search">Back to Home</button>
+                    </div>
+                `;
+                
+                announceElement.textContent = `Sorry, no results found for your search: "${searchTerm}". Try another search term.`;
+                document.getElementById('clear-search').addEventListener('click', clearSearchResults);
+                document.getElementById('clear-search').focus();
+                
+                // Add click events to suggested searches
+                document.querySelectorAll('.suggested-searches li').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const searchTerm = this.textContent;
+                        document.getElementById('search').value = searchTerm;
+                        document.getElementById('mobile-search').value = searchTerm;
+                        performSearch(searchTerm.toLowerCase());
+                    });
+                });
+                
+                return;
+            }
+            
+            allResults.forEach(result => {
+                const resultEl = document.createElement('div');
+                resultEl.className = 'search-result-item';
+                resultEl.innerHTML = `
+                    <h3>${result.title}</h3>
+                    <p>${result.description}</p>
+                    <a href="${result.link || '#'}" class="search-result-link" data-target="${result.id || ''}" aria-label="View details for ${result.title}">
+                        View details <i class="fas fa-arrow-right"></i>
+                    </a>
+                `;
+                resultsContainer.appendChild(resultEl);
+            });
+            
+            // Set focus to the first result
+            if (resultsContainer.firstChild) {
+                const firstLink = resultsContainer.querySelector('.search-result-link');
+                if (firstLink) {
+                    firstLink.focus();
+                }
+            }
+            
+            // Add event listeners to result links
+            document.querySelectorAll('.search-result-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('data-target')) {
+                        e.preventDefault();
+                        clearSearchResults();
+                        // Scroll to the section
+                        const targetSection = document.getElementById(this.getAttribute('data-target'));
+                        if (targetSection) {
+                            // Add temporary tabindex to make element focusable
+                            targetSection.setAttribute('tabindex', '-1');
+                            targetSection.scrollIntoView({ behavior: 'smooth' });
+                            targetSection.focus();
+                            
+                            // Remove tabindex after focus to prevent tab stops
+                            setTimeout(() => {
+                                targetSection.removeAttribute('tabindex');
+                            }, 1000);
+                        }
+                    }
+                });
+            });
+        }
+
+        function clearSearchResults() {
+            const searchResultsSection = document.getElementById('search-results-container');
+            searchResultsSection.style.display = 'none';
+            
+            // Clear search inputs
+            document.getElementById('search').value = '';
+            document.getElementById('mobile-search').value = '';
+            
+            // Focus on the main content
+            document.getElementById('main').focus();
+        }
+
+        // Close search results when clicking the "Back to Home" button
+        document.addEventListener('click', function(e) {
+            if (e.target.id === 'clear-search' || e.target.closest('#clear-search')) {
+                clearSearchResults();
             }
         });
 
-        // Search functionality
-        const searchData = [
-            { title: "Accessibility Testing Services", link: "#" },
-            { title: "WCAG Compliance Guidelines", link: "#" },
-            { title: "ADA Compliance Checklist", link: "#" },
-            { title: "Accessibility Training Programs", link: "#" },
-            { title: "Contact Us", link: "#construction" }
-        ];
-
-        function performSearch(inputId, resultsId) {
+        function initSearch(inputId, buttonSelector) {
             const searchInput = document.getElementById(inputId);
-            const searchResults = document.getElementById(resultsId);
+            const searchButton = document.querySelector(buttonSelector);
             
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.trim().toLowerCase();
-                searchResults.innerHTML = '';
-                
-                if (searchTerm.length === 0) {
-                    searchResults.style.display = 'none';
-                    return;
+            // Search on button click
+            searchButton.addEventListener('click', () => {
+                const searchTerm = searchInput.value.trim().toLowerCase();
+                if (searchTerm) {
+                    performSearch(searchTerm);
                 }
-                
-                const filteredResults = searchData.filter(item => 
-                    item.title.toLowerCase().includes(searchTerm)
-                );
-                
-                if (filteredResults.length > 0) {
-                    filteredResults.forEach(result => {
-                        const link = document.createElement('a');
-                        link.href = result.link;
-                        link.textContent = result.title;
-                        link.classList.add('search-result-item');
-                        searchResults.appendChild(link);
-                    });
-                    searchResults.style.display = 'block';
-                } else {
-                    const noResults = document.createElement('div');
-                    noResults.textContent = 'No results found';
-                    noResults.classList.add('no-results');
-                    searchResults.appendChild(noResults);
-                    searchResults.style.display = 'block';
+            });
+            
+            // Search on Enter key
+            searchInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    const searchTerm = searchInput.value.trim().toLowerCase();
+                    if (searchTerm) {
+                        performSearch(searchTerm);
+                    }
+                    e.preventDefault();
                 }
             });
         }
 
-        performSearch('search', 'search-results');
-        performSearch('mobile-search', 'mobile-search-results');
-
-        // Close search results when clicking outside
-        document.addEventListener('click', function(e) {
-            const desktopSearch = document.getElementById('search');
-            const desktopResults = document.getElementById('search-results');
-            const desktopButton = document.querySelector('.search-button');
-            
-            const mobileSearch = document.getElementById('mobile-search');
-            const mobileResults = document.getElementById('mobile-search-results');
-            const mobileButton = document.querySelector('.mobile-search-button');
-            
-            // Desktop search
-            if (desktopResults && !desktopResults.contains(e.target) && 
-                e.target !== desktopSearch && 
-                e.target !== desktopButton) {
-                desktopResults.style.display = 'none';
-            }
-            
-            // Mobile search
-            if (mobileResults && !mobileResults.contains(e.target) && 
-                e.target !== mobileSearch && 
-                e.target !== mobileButton) {
-                mobileResults.style.display = 'none';
-            }
-        });
-
-        // Under construction links
-        const constructionLinks = document.querySelectorAll('a[href="#construction"]');
-        constructionLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.getElementById('main').scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-    
+        // Initialize both desktop and mobile search
+        initSearch('search', '.search-button');
+        initSearch('mobile-search', '.mobile-search-button');
