@@ -1,5 +1,5 @@
 // EmailJS SDK Init
-emailjs.init("IhwJv_H25btatLGJh"); 
+emailjs.init("IhwJv_H25btatLGJh", "https://api.emailjs.com");
 
 // Mobile menu functionality
 const hamburgerBtn = document.getElementById('hamburger-btn');
