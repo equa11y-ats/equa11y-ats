@@ -301,7 +301,8 @@ document.getElementById('audit-form').addEventListener('submit', function(e) {
         email: email
     };
 
-    emailjs.send("service_13fsuxq", "template_hlxkirm", {{website}}, {{email}})
+    // Corrected the send method parameters
+    emailjs.send("service_13fsuxq", "template_hlxkirm", templateParams)
         .then(function(response) {
             successMessage.style.display = 'block';
             websiteInput.value = '';
