@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | equA11Y aTs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ContactUs.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <div id="aria-announce" class="sr-announce" aria-live="polite" aria-atomic="true"></div>
+
+    <header id="main-header">
+        <div class="mobile-header-top">
+            <button class="hamburger" aria-expanded="false" aria-label="Navigation Menu" id="hamburger-btn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="https://www.equa11yats.com/" aria-current="page">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>
+            
+            <div class="mobile-header-right">
+                <div class="mobile-search-container">
+                    <button class="mobile-search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="mobile-search-expanded" id="mobile-search-expanded">
+                        <input type="search" id="mobile-search" placeholder="Search..." aria-label="Search">
+                        <div class="search-results" id="mobile-search-results"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="desktop-header">
+            <a href="https://www.equa11yats.com/" aria-current="page">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>         
+            <div class="header-right">
+                <div class="search-container" role="search" aria-label="Search our website">
+                    <input type="search" id="search" placeholder="Search..." aria-label="Search">
+                    <button class="search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <ul id="main-navigation">
+                <li><a href="OurServices.html">Our Services</a></li>
+                <li><a href="What is Accessibility.html">What is Accessibility</a></li>
+                <li><a href="Why Accessibility.html">Why Accessibility</a></li>
+                <li><a href="A11Y Library.html">A11Y Library</a></li>
+                <li><a href="Foxone USA.html">Foxone USA</a></li>
+                <li><a href="Contact Us.html" aria-current="page">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-menu" id="close-menu" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="OurServices.html">Our Services</a></li>
+            <li><a href="What is Accessibility.html">What is Accessibility</a></li>
+            <li><a href="Why Accessibility.html">Why Accessibility</a></li>
+            <li><a href="A11Y Library.html">A11Y Library</a></li>
+            <li><a href="Foxone USA.html">Foxone USA</a></li>
+            <li><a href="Contact Us.html" aria-current="page">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="contact-hero" aria-labelledby="contact-hero-heading">
+            <div class="hero-content">
+                <h1 id="contact-hero-heading">Get in Touch With Our Accessibility Experts</h1>
+                <p>We're here to answer your questions and help you create inclusive digital experiences.</p>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="contact-content" aria-labelledby="contact-content-heading">
+            <div class="container">
+                <h2 id="contact-content-heading" class="sr-only">Contact Information and Form</h2>
+                
+                <div class="contact-grid">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Our Office</h4>
+                                <p>123 Accessibility Way<br>Irvine, CA 92618<br>United States</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Phone & Fax</h4>
+                                <p>Phone: +1 (949) 331-8409<br>Fax: +1 (949) 331-8410</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <p>General Inquiries: <a href="mailto:info@equa11yats.com">info@equa11yats.com</a><br>
+                                Support: <a href="mailto:support@equa11yats.com">support@equa11yats.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Business Hours</h4>
+                                <p>Monday-Friday: 9am - 6pm PST<br>
+                                Saturday: 10am - 2pm PST<br>
+                                Sunday: Closed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required aria-required="true">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required aria-required="true">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject <span class="required">*</span></label>
+                                <select id="subject" name="subject" required aria-required="true">
+                                    <option value="">Select a subject</option>
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="Accessibility Audit">Accessibility Audit</option>
+                                    <option value="Training Request">Training Request</option>
+                                    <option value="Consultation">Consultation</option>
+                                    <option value="Support">Support</option>
+                                    <option value="Partnership">Partnership</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Your Message <span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <button type="submit" class="cta-button">Send Message</button>
+                            </div>
+                            
+                            <div id="form-status"></div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Map Section -->
+                <div class="map-section">
+                    <h3>Our Location</h3>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106552.39658166578!2d-117.89256022499755!3d33.66902941823269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcde0cc2d5f7e9%3A0x3e9a81f8beb2b7c9!2sIrvine%2C%20CA!5e0!3m2!1sen!2sus!4v1719080000000!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            title="Our Location in Irvine, California"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h3>Frequently Asked Questions</h3>
+                    
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                How quickly can you start an accessibility audit?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We can typically begin an audit within 1-3 business days of receiving your request, depending on project scope and our current workload. For urgent requests, we offer expedited services.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                Do you offer accessibility training for our team?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes, we provide comprehensive accessibility training for developers, designers, content creators, and QA teams. Training can be customized to your team's specific needs and scheduled at your convenience.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                What accessibility standards do you follow?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>We adhere to WCAG 2.1/2.2 Level AA standards, Section 508, ADA, and EN 301 549 requirements. Our experts stay current with all global accessibility regulations and best practices.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                Can you help with ongoing accessibility maintenance?
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Absolutely. We offer various support plans for ongoing accessibility maintenance, including monthly monitoring, quarterly audits, and developer support to ensure your digital properties remain compliant.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="contact-cta" aria-labelledby="contact-cta-heading">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="contact-cta-heading">Ready to Make Your Digital Presence Accessible?</h2>
+                    <p>Schedule a free 30-minute consultation with our accessibility experts</p>
+                    <a href="#" class="cta-button">Schedule Free Consultation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div>
+                <h3>Company</h3>
+                <a href="AboutUs.html">About Us</a>
+                <a href="Our Team.html">Our Team</a>
+                <a href="Careers.html">Careers</a>
+                <a href="Accessibility Statement.html">Accessibility Statement</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <a href="Accessibility Testing.html">Accessibility Testing</a>
+                <a href="Training.html">Training</a>
+                <a href="Consulting.html">Consulting</a>
+                <a href="Remediation.html">Remediation</a>
+                <a href="Compliance Support.html">Compliance Support</a>
+            </div>
+            <div>
+                <h3>Reach Us</h3>
+                <a href="mailto:equa11yats@gmail.com">equa11yats@gmail.com</a>
+                <a href="tel:+19493318409">+1 (949) 331-8409</a>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 equA11Y aTs. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="ContactUs.js"></script>
+</body>
+</html>
