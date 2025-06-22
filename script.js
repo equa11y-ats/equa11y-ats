@@ -269,7 +269,6 @@ document.querySelectorAll('.slide:not(.active) .cta-button').forEach(btn => {
 });
 
 // Free audit form submission with EmailJS
-
 document.getElementById('audit-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const websiteInput = document.getElementById('website-input');
@@ -296,22 +295,55 @@ document.getElementById('audit-form').addEventListener('submit', function(e) {
         return;
     }
 
-    const templateParams = {
+    // Validate URL format
+    try {
+        new URL(website);
+    } catch (e) {
+        errorMessage.textContent = 'Please enter a valid URL (e.g., https://example.com).';
+        errorMessage.style.display = 'block';
+        websiteInput.focus();
+        return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        errorMessage.textContent = 'Please enter a valid email address.';
+        errorMessage.style.display = 'block';
+        emailInput.focus();
+        return;
+    }
+
+    console.log('Sending form data:', { website, email });
+
+    emailjs.send("service_13fsuxq", "template_hlxkirm", {
         website: website,
         email: email
-    };
-
-    // Corrected the send method parameters
-    emailjs.send("service_13fsuxq", "template_hlxkirm", templateParams)
-        .then(function(response) {
-            successMessage.style.display = 'block';
-            websiteInput.value = '';
-            emailInput.value = '';
-        }, function(error) {
-            errorMessage.textContent = 'Failed to submit request. Please try again.';
-            errorMessage.style.display = 'block';
-            console.error("EmailJS Error:", error);
-        });
+    })
+    .then(function(response) {
+        console.log('Email sent successfully!', response);
+        successMessage.style.display = 'block';
+        websiteInput.value = '';
+        emailInput.value = '';
+        
+        // Hide success message after 10 seconds
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+        }, 10000);
+    }, function(error) {
+        console.error('EmailJS error:', error);
+        
+        let errorText = 'Failed to submit request. Please try again.';
+        if (error.text) {
+            errorText += ` (Error: ${error.text})`;
+        }
+        
+        errorMessage.textContent = errorText;
+        errorMessage.style.display = 'block';
+        
+        // Keep the form data for user to try again
+        websiteInput.focus();
+    });
 });
 
 // Under construction links
