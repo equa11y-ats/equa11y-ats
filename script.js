@@ -1,3 +1,6 @@
+// EmailJS SDK Init
+emailjs.init("IhwJv_H25btatLGJh"); 
+
 // Mobile menu functionality
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -265,7 +268,8 @@ document.querySelectorAll('.slide:not(.active) .cta-button').forEach(btn => {
     btn.setAttribute('tabindex', '-1');
 });
 
-// Free audit form submission
+// Free audit form submission with EmailJS
+
 document.getElementById('audit-form').addEventListener('submit', function(e) {
     e.preventDefault();
     const websiteInput = document.getElementById('website-input');
@@ -274,28 +278,39 @@ document.getElementById('audit-form').addEventListener('submit', function(e) {
     const successMessage = document.getElementById('success-message');
     const website = websiteInput.value.trim();
     const email = emailInput.value.trim();
-    
+
     errorMessage.style.display = 'none';
     successMessage.style.display = 'none';
-    
+
     if (!website) {
         errorMessage.textContent = 'Website URL is required.';
         errorMessage.style.display = 'block';
         websiteInput.focus();
         return;
     }
-    
+
     if (!email) {
         errorMessage.textContent = 'Email address is required.';
         errorMessage.style.display = 'block';
         emailInput.focus();
         return;
     }
-    
-    successMessage.style.display = 'block';
-    
-    websiteInput.value = '';
-    emailInput.value = '';
+
+    const templateParams = {
+        website: website,
+        email: email
+    };
+
+    emailjs.send("service_13fsuxq", "template_hlxkirm", {{website}}, {{email}})
+        .then(function(response) {
+            successMessage.style.display = 'block';
+            websiteInput.value = '';
+            emailInput.value = '';
+        }, function(error) {
+            errorMessage.textContent = 'Failed to submit request. Please try again.';
+            errorMessage.style.display = 'block';
+            console.error("EmailJS Error:", error);
+        });
 });
 
 // Under construction links
