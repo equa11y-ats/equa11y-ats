@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Accessibility? | equA11Y aTs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="WhatIsAccessibility_style.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <div id="aria-announce" class="sr-announce" aria-live="polite" aria-atomic="true"></div>
+
+    <header id="main-header">
+        <div class="desktop-header">
+            <a href="https://www.equa11yats.com/" aria-current="page">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>         
+            <div class="header-right">
+                <div class="search-container" role="search" aria-label="Search our website">
+                    <input type="search" id="search" placeholder="Search..." aria-label="Search">
+                    <button class="search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <ul id="main-navigation">
+                <li><a href="OurServices.html">Our Services</a></li>
+                <li><a href="What is Accessibility.html" aria-current="page">What is Accessibility</a></li>
+                <li><a href="Why Accessibility.html">Why Accessibility</a></li>
+                <li><a href="A11Y Library.html">A11Y Library</a></li>
+                <li><a href="Foxone USA.html">Foxone USA</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+        <h1 class="page-title">What is Digital Accessibility?</h1>
+        
+        <section class="intro-section" aria-labelledby="accessibility-intro">
+            <h2 id="accessibility-intro" class="sr-only">Introduction to Digital Accessibility</h2>
+            <p>Digital accessibility means designing websites, apps, and digital tools so that <strong>everyone can use them</strong>, including people with disabilities.</p>
+            
+            <p>Think of it like building a physical store with ramps alongside stairs, wide aisles for wheelchairs, and braille signs for the visually impaired. Digital accessibility does the same thing but for websites and apps.</p>
+            
+            <div class="analogy-box">
+                <h3>Simple Analogy</h3>
+                <p>Imagine you're hosting a party. You want everyone to enjoy themselves - people who use wheelchairs, people who are deaf, people who are blind, and people with other disabilities. You would:</p>
+                <ul>
+                    <li>Provide ramps alongside stairs</li>
+                    <li>Offer written transcripts for announcements</li>
+                    <li>Describe visual elements for blind guests</li>
+                    <li>Ensure food options for people with dietary restrictions</li>
+                </ul>
+                <p>Digital accessibility does the same for websites and apps - it makes sure everyone can "attend the party" and fully participate.</p>
+            </div>
+            
+            <p>At its core, accessibility is about <strong>inclusion</strong> and <strong>equal access</strong>. It ensures that people with disabilities can perceive, understand, navigate, and interact with digital content.</p>
+        </section>
+        
+        <section class="key-principles" aria-labelledby="wcag-principles">
+            <h2 id="wcag-principles" class="sr-only">Key Principles of Accessibility</h2>
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <i class="fas fa-eye" aria-hidden="true"></i>
+                </div>
+                <h3>Perceivable</h3>
+                <p>Information must be presented in ways users can perceive. This includes providing text alternatives for images, captions for videos, and sufficient color contrast.</p>
+            </div>
+            
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <i class="fas fa-mouse-pointer" aria-hidden="true"></i>
+                </div>
+                <h3>Operable</h3>
+                <p>Interface components must be operable. This includes keyboard accessibility, enough time to read content, and avoiding content that causes seizures.</p>
+            </div>
+            
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <i class="fas fa-brain" aria-hidden="true"></i>
+                </div>
+                <h3>Understandable</h3>
+                <p>Information and operation must be understandable. This includes clear language, consistent navigation, and helping users avoid and correct mistakes.</p>
+            </div>
+            
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                </div>
+                <h3>Robust</h3>
+                <p>Content must be robust enough to work with current and future technologies, including assistive devices like screen readers.</p>
+            </div>
+        </section>
+        
+        <section class="disability-types" aria-labelledby="disability-types">
+            <h2 id="disability-types">Different Types of Disabilities</h2>
+            <p>Accessibility addresses a wide range of disabilities that affect how people interact with digital content:</p>
+            
+            <div class="disability-grid">
+                <div class="disability-item">
+                    <div class="disability-icon">
+                        <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                    </div>
+                    <h3>Mobility Impairments</h3>
+                    <p>People who have difficulty using a mouse, may rely on keyboards, voice commands, or adaptive switches to navigate websites.</p>
+                </div>
+                
+                <div class="disability-item">
+                    <div class="disability-icon">
+                        <i class="fas fa-eye-low-vision" aria-hidden="true"></i>
+                    </div>
+                    <h3>Visual Impairments</h3>
+                    <p>Includes people who are blind (using screen readers), have low vision (needing magnification), or have color blindness.</p>
+                </div>
+                
+                <div class="disability-item">
+                    <div class="disability-icon">
+                        <i class="fas fa-deaf" aria-hidden="true"></i>
+                    </div>
+                    <h3>Hearing Impairments</h3>
+                    <p>People who are deaf or hard of hearing need captions for audio content and transcripts for podcasts.</p>
+                </div>
+                
+                <div class="disability-item">
+                    <div class="disability-icon">
+                        <i class="fas fa-head-side-virus" aria-hidden="true"></i>
+                    </div>
+                    <h3>Cognitive Disabilities</h3>
+                    <p>Includes learning disabilities, attention disorders, and memory impairments. Need clear, simple content and consistent navigation.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="benefits-section" aria-labelledby="accessibility-benefits">
+            <h2 id="accessibility-benefits">Why Accessibility Benefits Everyone</h2>
+            <p>While accessibility primarily focuses on people with disabilities, it actually improves the experience for all users:</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                    </div>
+                    <h3>Broader Audience</h3>
+                    <p>Reach the 1.3 billion people worldwide with disabilities</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile" aria-hidden="true"></i>
+                    </div>
+                    <h3>Better Mobile Experience</h3>
+                    <p>Accessible sites work better on mobile devices</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </div>
+                    <h3>Improved SEO</h3>
+                    <p>Search engines can better understand accessible sites</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-thumbs-up" aria-hidden="true"></i>
+                    </div>
+                    <h3>Enhanced Usability</h3>
+                    <p>Clear navigation and structure help all users</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="call-to-action" aria-labelledby="next-steps">
+            <h2 id="next-steps" class="sr-only">Next Steps</h2>
+            <p>Ready to make your digital presence accessible to everyone?</p>
+            <a href="Contact Us.html" class="cta-button">Get Your Free Accessibility Assessment</a>
+            <p style="margin-top: 1rem;">Or learn more about <a href="Why Accessibility.html" style="color: var(--accent-color); font-weight: 600;">Why Accessibility Matters</a></p>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div>
+                <h3>Company</h3>
+                <a href="About Us.hmlt">About Us</a>
+                <a href="Our Team.html">Our Team</a>
+                <a href="Careers.html">Careers</a>
+                <a href="Accessibility Statement.html">Accessibility Statement</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <a href="Accessibility Testing.html">Accessibility Testing</a>
+                <a href="Training.html">Training</a>
+                <a href="Consulting.html">Consulting</a>
+                <a href="Remediation.html">Remediation</a>
+                <a href="Compliance Support.html">Compliance Support</a>
+            </div>
+            <div>
+                <h3>Reach Us</h3>
+                <a href="mailto:equa11yats@gmail.com">equa11yats@gmail.com</a>
+                <a href="tel:+19493318409">+1 (949) 331-8409</a>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 equA11Y aTs. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="WhatIsAccessibility_script.js"></script>
+</body>
+</html>

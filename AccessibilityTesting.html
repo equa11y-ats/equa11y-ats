@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Testing Services | equA11Y aTs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="AccessibilityTesting.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <div id="aria-announce" class="sr-announce" aria-live="polite" aria-atomic="true"></div>
+
+    <header id="main-header">
+        <div class="mobile-header-top">
+            <button class="hamburger" aria-expanded="false" aria-label="Navigation Menu" id="hamburger-btn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="https://www.equa11yats.com/">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>
+            
+            <div class="mobile-header-right">
+                <div class="mobile-search-container">
+                    <button class="mobile-search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="mobile-search-expanded" id="mobile-search-expanded">
+                        <input type="search" id="mobile-search" placeholder="Search..." aria-label="Search">
+                        <div class="search-results" id="mobile-search-results"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="desktop-header">
+            <a href="https://www.equa11yats.com/">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>         
+            <div class="header-right">
+                <div class="search-container" role="search" aria-label="Search our website">
+                    <input type="search" id="search" placeholder="Search..." aria-label="Search">
+                    <button class="search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <ul id="main-navigation">
+                <li><a href="OurServices.html" aria-current="page">Our Services</a></li>
+                <li><a href="What is Accessibility.html">What is Accessibility</a></li>
+                <li><a href="Why Accessibility.html">Why Accessibility</a></li>
+                <li><a href="A11Y Library.html">A11Y Library</a></li>
+                <li><a href="Foxone USA.html">Foxone USA</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-menu" id="close-menu" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="OurServices.html" aria-current="page">Our Services</a></li>
+            <li><a href="What is Accessibility.html">What is Accessibility</a></li>
+            <li><a href="Why Accessibility.html">Why Accessibility</a></li>
+            <li><a href="A11Y Library.html">A11Y Library</a></li>
+            <li><a href="Foxone USA.html">Foxone USA</a></li>
+            <li><a href="Contact Us.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <main id="main">
+        <!-- Breadcrumb navigation -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="https://www.equa11yats.com/">Home</a></li>
+                <li><a href="OurServices.html">Our Services</a></li>
+                <li aria-current="page">Accessibility Testing</li>
+            </ol>
+        </nav>
+        
+        <section class="service-hero" aria-labelledby="service-hero-heading">
+            <div class="hero-content">
+                <h1 id="service-hero-heading">Professional Accessibility Testing Services</h1>
+                <p class="hero-subtitle">Ensure your digital products are inclusive and compliant with WCAG 2.2 AA standards</p>
+                <div class="hero-cta">
+                    <a href="#free-audit" class="cta-button primary">Get Free Assessment</a>
+                    <a href="Contact Us.html" class="cta-button secondary">Contact Our Experts</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="accessibility-hero.jpg" alt="Accessibility testing professionals at work with various assistive technologies">
+            </div>
+        </section>
+
+        <section class="testing-approach" aria-labelledby="approach-heading">
+            <div class="section-intro">
+                <h2 id="approach-heading">Our Comprehensive Testing Approach</h2>
+                <p>We combine automated tools, manual expertise, and user testing to deliver the most accurate accessibility evaluation.</p>
+            </div>
+            
+            <div class="approach-grid">
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Automated Testing</h3>
+                    <p>Utilizing industry-leading tools to quickly identify common accessibility issues across your entire site.</p>
+                    <ul class="approach-features">
+                        <li>Full-site scanning</li>
+                        <li>Issue categorization</li>
+                        <li>Detailed reports</li>
+                        <li>Regression prevention</li>
+                    </ul>
+                </div>
+                
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Manual Testing</h3>
+                    <p>Our certified experts conduct thorough manual testing to uncover issues that automated tools miss.</p>
+                    <ul class="approach-features">
+                        <li>Keyboard navigation testing</li>
+                        <li>Screen reader compatibility</li>
+                        <li>Color contrast analysis</li>
+                        <li>Focus management</li>
+                    </ul>
+                </div>
+                
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <h3>Assistive Technology Testing</h3>
+                    <p>Real-world testing with the assistive technologies your users rely on daily.</p>
+                    <ul class="approach-features">
+                        <li>Screen readers (JAWS, NVDA, VoiceOver)</li>
+                        <li>Screen magnifiers</li>
+                        <li>Voice recognition software</li>
+                        <li>Switch devices</li>
+                    </ul>
+                </div>
+                
+                <div class="approach-card">
+                    <div class="approach-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>User Testing</h3>
+                    <p>Involving people with disabilities to provide authentic feedback on your product's usability.</p>
+                    <ul class="approach-features">
+                        <li>Diverse user groups</li>
+                        <li>Real-world scenarios</li>
+                        <li>Actionable insights</li>
+                        <li>Inclusive design validation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="wcag-compliance" aria-labelledby="wcag-heading">
+            <div class="section-intro">
+                <h2 id="wcag-heading">WCAG 2.2 Compliance Testing</h2>
+                <p>We test against all WCAG 2.2 AA success criteria to ensure your product meets the latest accessibility standards.</p>
+            </div>
+            
+            <div class="principles-container">
+                <div class="principle">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Perceivable</h3>
+                    </div>
+                    <p>Information and user interface components must be presentable to users in ways they can perceive.</p>
+                    <ul>
+                        <li>Text alternatives for non-text content</li>
+                        <li>Captions and other alternatives for multimedia</li>
+                        <li>Content that can be presented in different ways</li>
+                        <li>Content is easier to see and hear</li>
+                    </ul>
+                </div>
+                
+                <div class="principle">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="fas fa-hand-pointer"></i>
+                        </div>
+                        <h3>Operable</h3>
+                    </div>
+                    <p>User interface components and navigation must be operable by all users.</p>
+                    <ul>
+                        <li>Keyboard accessible functionality</li>
+                        <li>Enough time to read and use content</li>
+                        <li>Content that does not cause seizures</li>
+                        <li>Ways to help users navigate and find content</li>
+                    </ul>
+                </div>
+                
+                <div class="principle">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Understandable</h3>
+                    </div>
+                    <p>Information and operation of the user interface must be understandable.</p>
+                    <ul>
+                        <li>Text is readable and understandable</li>
+                        <li>Content appears and operates in predictable ways</li>
+                        <li>Help users avoid and correct mistakes</li>
+                    </ul>
+                </div>
+                
+                <div class="principle">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Robust</h3>
+                    </div>
+                    <p>Content must be robust enough to be interpreted reliably by a wide variety of user agents.</p>
+                    <ul>
+                        <li>Compatibility with current and future tools</li>
+                        <li>Valid HTML and ARIA implementation</li>
+                        <li>Consistent interpretation across platforms</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="testing-process" aria-labelledby="process-heading">
+            <h2 id="process-heading">Our Accessibility Testing Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery & Planning</h3>
+                    <p>We understand your requirements and define the scope of testing.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Automated Scanning</h3>
+                    <p>Initial automated testing to identify obvious issues.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Manual Evaluation</h3>
+                    <p>Expert manual testing for complex accessibility issues.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Assistive Tech Testing</h3>
+                    <p>Testing with actual assistive technologies.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Reporting & Analysis</h3>
+                    <p>Detailed report with prioritized findings.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Remediation Support</h3>
+                    <p>Guidance on fixing identified issues.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">7</div>
+                    <h3>Verification & Certification</h3>
+                    <p>Final testing and compliance certification.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="audit-banner" id="free-audit" aria-labelledby="free-audit-heading">
+            <div class="container">
+                <h2 id="free-audit-heading">Get Your Free Accessibility Compliance Report</h2>
+                <p>We'll evaluate a key page and provide actionable insights.</p>
+                <form class="audit-form" id="audit-form">
+                    <div class="form-group">
+                        <label for="website-input" class="form-label">Website URL</label>
+                        <input type="url" id="website-input" placeholder="https://example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email-input" class="form-label">Your Business Email</label>
+                        <input type="email" id="email-input" placeholder="name@company.com" required>
+                    </div>
+                    <button type="submit">Request Free A11y Compliance Report</button>
+                    <div class="error-message" id="error-message"></div>
+                </form>
+                <div class="success-message" id="success-message">
+                    <h3><i class="fas fa-check-circle"></i> We will review and get back to you soon!</h3>
+                    <p>Thank you for your interest in accessibility. Our team will review your website and email you the results within 48 hours.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div>
+                <h3>Company</h3>
+                <a href="About Us.html">About Us</a>
+                <a href="Our Team.html">Our Team</a>
+                <a href="Careers.html">Careers</a>
+                <a href="Accessibility Statement.html">Accessibility Statement</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <a href="AccessibilityTesting.html" aria-current="page">Accessibility Testing</a>
+                <a href="Training.html">Training</a>
+                <a href="Consulting.html">Consulting</a>
+                <a href="Remediation.html">Remediation</a>
+                <a href="Compliance Support.html">Compliance Support</a>
+            </div>
+            <div>
+                <h3>Reach Us</h3>
+                <a href="mailto:equa11yats@gmail.com">equa11yats@gmail.com</a>
+                <a href="tel:+19493318409">+1 (949) 331-8409</a>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 equA11Y aTs. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="AccessibilityTesting.js"></script>
+</body>
+</html>

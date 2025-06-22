@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | equA11Y aTs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #003366;
+            --accent-color: #0077b3;
+            --dark-color: #1a1a1a;
+            --light-bg: #f8f9fa;
+            --success-color: #4CAF50;
+            --warning-color: #FFC107;
+            --error-color: #F44336;
+            --text-color: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --control-bg: rgba(0, 51, 102, 0.9);
+            --focus-color: #ff9900;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px;
+            z-index: 1000;
+            border-radius: 0 0 4px 4px;
+            transition: top 0.3s ease;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            outline: 3px solid var(--focus-color);
+            outline-offset: 2px;
+        }
+
+        header {
+            padding: 1rem;
+            background: var(--secondary-color);
+            position: relative;
+            z-index: 100;
+        }
+
+        .mobile-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2.5rem;
+            width: 100%;
+        }
+
+        .logo {
+            height: 80px;
+            width: 250px;
+            padding: 0;
+            border-radius: 0;
+            background: transparent;
+            max-width: 100%;
+        }
+
+        .mobile-header-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .mobile-search-button {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .desktop-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            padding: 0 0.5rem;
+            position: relative;
+        }
+
+        nav {
+            background: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 90;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            list-style: none;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        nav a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        footer h3 {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 0;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Privacy Policy specific styles */
+        .privacy-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .privacy-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .header-subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .last-updated {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .privacy-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .privacy-intro {
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .privacy-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            position: relative;
+        }
+
+        .section-content {
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+        }
+
+        .info-list {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .info-list li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .contact-box {
+            background: var(--light-bg);
+            border-left: 4px solid var(--accent-color);
+            padding: 2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+        }
+
+        .contact-box h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .policy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .policy-table th,
+        .policy-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .policy-table th {
+            background: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .policy-table tr:nth-child(even) {
+            background: rgba(0, 86, 179, 0.05);
+        }
+
+        .policy-table tr:hover {
+            background: rgba(0, 86, 179, 0.1);
+        }
+
+        .changes-section {
+            background: var(--light-bg);
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 4rem 0;
+        }
+
+        .policy-summary {
+            background: rgba(0, 119, 179, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .policy-summary h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .summary-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .summary-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .summary-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top i {
+            margin-right: 0.5rem;
+        }
+
+        .back-to-top:hover {
+            text-decoration: underline;
+        }
+
+        .policy-highlight {
+            background: rgba(255, 221, 0, 0.15);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .privacy-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .policy-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .changes-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .privacy-header {
+                padding: 4rem 1.5rem;
+            }
+            
+            .privacy-container {
+                padding: 0 1.5rem;
+            }
+            
+            .policy-table th,
+            .policy-table td {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .contact-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <div id="aria-announce" class="sr-announce" aria-live="polite" aria-atomic="true"></div>
+
+    <header id="main-header">
+        <div class="mobile-header-top">
+            <button class="hamburger" aria-expanded="false" aria-label="Navigation Menu" id="hamburger-btn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="https://www.equa11yats.com/">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>
+            
+            <div class="mobile-header-right">
+                <div class="mobile-search-container">
+                    <button class="mobile-search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="desktop-header">
+            <a href="https://www.equa11yats.com/">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>         
+            <div class="header-right">
+                <div class="search-container" role="search" aria-label="Search our website">
+                    <input type="search" id="search" placeholder="Search..." aria-label="Search">
+                    <button class="search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <ul id="main-navigation">
+                <li><a href="OurServices.html">Our Services</a></li>
+                <li><a href="What is Accessibility.html">What is Accessibility</a></li>
+                <li><a href="Why Accessibility.html">Why Accessibility</a></li>
+                <li><a href="A11Y Library.html">A11Y Library</a></li>
+                <li><a href="Foxone USA.html">Foxone USA</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="privacy-header">
+            <div class="header-content">
+                <h1>Privacy Policy</h1>
+                <p class="header-subtitle">Your privacy is important to us. This policy explains how we collect, use, and protect your personal information.</p>
+                <p class="last-updated"><strong>Last Updated:</strong> June 22, 2025</p>
+            </div>
+        </section>
+
+        <div class="privacy-container">
+            <div class="privacy-intro">
+                <p>equA11Y aTs ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website equa11yats.com or use our services.</p>
+                <p>Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title">1. Information We Collect</h2>
+                <div class="section-content">
+                    <p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>
+                    
+                    <h3>Personal Data</h3>
+                    <p>Personally identifiable information that you voluntarily provide to us when you register on the Site, place an order, subscribe to our newsletter, or contact us. This may include:</p>
+                    <ul class="info-list">
+                        <li>Your name and contact information (email address, phone number)</li>
+                        <li>Company name and job title</li>
+                        <li>Billing address and payment information</li>
+                        <li>Website URLs you provide for accessibility testing</li>
+                    </ul>
+                    
+                    <h3>Derivative Data</h3>
+                    <p>Information our servers automatically collect when you access the Site, such as your IP address, browser type, operating system, access times, and pages viewed.</p>
+                    
+                    <h3>Cookies and Tracking Technologies</h3>
+                    <p>We may use cookies, web beacons, and other tracking technologies to collect information about you and your interaction with our Site, including:</p>
+                    <ul class="info-list">
+                        <li>Session cookies to keep you logged in</li>
+                        <li>Preference cookies to remember your settings</li>
+                        <li>Analytics cookies to understand how our Site is used</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title">2. How We Use Your Information</h2>
+                <div class="section-content">
+                    <p>We use the information we collect about you for various business purposes:</p>
+                    
+                    <table class="policy-table">
+                        <thead>
+                            <tr>
+                                <th>Purpose</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Service Delivery</td>
+                                <td>To provide our accessibility testing services and fulfill your requests</td>
+                            </tr>
+                            <tr>
+                                <td>Customer Support</td>
+                                <td>To respond to your inquiries and provide technical assistance</td>
+                            </tr>
+                            <tr>
+                                <td>Communication</td>
+                                <td>To send important account/service information and marketing communications</td>
+                            </tr>
+                            <tr>
+                                <td>Improvement</td>
+                                <td>To analyze usage and improve our website, services, and user experience</td>
+                            </tr>
+                            <tr>
+                                <td>Security</td>
+                                <td>To detect and prevent fraudulent activity and security incidents</td>
+                            </tr>
+                            <tr>
+                                <td>Legal Compliance</td>
+                                <td>To comply with legal obligations and enforce our terms</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="policy-summary">
+                        <h3>Legal Basis for Processing</h3>
+                        <p>We process personal information under the following legal bases:</p>
+                        <ul class="summary-list">
+                            <li>Your consent to the processing</li>
+                            <li>Performance of a contract with you</li>
+                            <li>Compliance with our legal obligations</li>
+                            <li>Our legitimate interests in conducting our business</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title">3. How We Share Your Information</h2>
+                <div class="section-content">
+                    <p>We may share your information in the following situations:</p>
+                    
+                    <ul class="info-list">
+                        <li><strong>Service Providers:</strong> We may share your information with third-party vendors who perform services for us, such as payment processing, data analysis, email delivery, and hosting services.</li>
+                        <li><strong>Business Transfers:</strong> We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</li>
+                        <li><strong>Legal Requirements:</strong> We may disclose your information where required to do so by law or in response to valid requests by public authorities.</li>
+                        <li><strong>Consent:</strong> We may disclose your personal information for any other purpose with your consent.</li>
+                    </ul>
+                    
+                    <div class="contact-box">
+                        <h3>Third-Party Services</h3>
+                        <p>We use the following third-party services that may collect information about you:</p>
+                        <ul class="info-list">
+                            <li>Google Analytics for website usage statistics</li>
+                            <li>Mailchimp for email marketing communications</li>
+                            <li>Stripe for payment processing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title">4. Data Security</h2>
+                <div class="section-content">
+                    <p>We implement appropriate technical and organizational security measures designed to protect the security of your personal information. These include:</p>
+                    
+                    <ul class="info-list">
+                        <li>Encryption of sensitive data in transit and at rest</li>
+                        <li>Regular security assessments and vulnerability testing</li>
+                        <li>Access controls to restrict access to personal information</li>
+                        <li>Secure development practices for our software</li>
+                        <li>Employee security training and awareness programs</li>
+                    </ul>
+                    
+                    <p><span class="policy-highlight">Important:</span> While we strive to protect your personal information, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security of your data.</p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title">5. Data Retention</h2>
+                <div class="section-content">
+                    <p>We will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to:</p>
+                    
+                    <ul class="info-list">
+                        <li>Comply with our legal obligations</li>
+                        <li>Resolve disputes</li>
+                        <li>Enforce our legal agreements and policies</li>
+                        <li>Maintain business records for analysis and audit purposes</li>
+                    </ul>
+                    
+                    <p>When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymize it.</p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title">6. Your Privacy Rights</h2>
+                <div class="section-content">
+                    <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+                    
+                    <ul class="info-list">
+                        <li><strong>Access:</strong> Request access to the personal information we hold about you</li>
+                        <li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>
+                        <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+                        <li><strong>Objection:</strong> Object to processing of your personal information</li>
+                        <li><strong>Restriction:</strong> Request restriction of processing your personal information</li>
+                        <li><strong>Portability:</strong> Request transfer of your personal information to another organization</li>
+                        <li><strong>Withdraw Consent:</strong> Withdraw your consent at any time where we rely on consent to process your information</li>
+                    </ul>
+                    
+                    <p>To exercise any of these rights, please contact us using the information provided below.</p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title">7. International Data Transfers</h2>
+                <div class="section-content">
+                    <p>Your information, including personal data, may be transferred to — and maintained on — computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.</p>
+                    <p>We will take all steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy. This includes implementing appropriate safeguards such as Standard Contractual Clauses approved by the European Commission.</p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title">8. Children's Privacy</h2>
+                <div class="section-content">
+                    <p>Our services are not directed to children under the age of 16. We do not knowingly collect personal information from children under 16. If we become aware that we have collected personal information from a child under 16, we will take steps to delete such information from our files.</p>
+                </div>
+            </div>
+
+            <div class="changes-section">
+                <h2 class="section-title">9. Changes to This Privacy Policy</h2>
+                <div class="section-content">
+                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top of this Privacy Policy.</p>
+                    <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+                </div>
+            </div>
+
+            <div class="privacy-section">
+                <h2 class="section-title">10. Contact Us</h2>
+                <div class="section-content">
+                    <p>If you have any questions or concerns about this Privacy Policy or our privacy practices, please contact us:</p>
+                    
+                    <div class="contact-box">
+                        <h3>equA11Y aTs</h3>
+                        <p><strong>Email:</strong> privacy@equa11yats.com</p>
+                        <p><strong>Phone:</strong> +1 (949) 331-8409</p>
+                        <p><strong>Address:</strong> 123 Accessibility Way, Suite 100, Irvine, CA 92614</p>
+                    </div>
+                    
+                    <p>We will respond to your inquiry within 30 days.</p>
+                </div>
+            </div>
+
+            <a href="#" class="back-to-top">
+                <i class="fas fa-arrow-up"></i> Back to Top
+            </a>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div>
+                <h3>Company</h3>
+                <a href="About Us.html">About Us</a>
+                <a href="Our Team.html">Our Team</a>
+                <a href="Careers.html">Careers</a>
+                <a href="Accessibility Statement.html">Accessibility Statement</a>
+                <a href="PrivacyPolicy.html" aria-current="page">Privacy Policy</a>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <a href="AccessibilityTesting.html">Accessibility Testing</a>
+                <a href="Consulting.html">Consulting</a>
+                <a href="Training.html">Training</a>
+                <a href="Remediation.html">Remediation</a>
+                <a href="Compliance Support.html">Compliance Support</a>
+            </div>
+            <div>
+                <h3>Reach Us</h3>
+                <a href="mailto:equa11yats@gmail.com">equa11yats@gmail.com</a>
+                <a href="tel:+19493318409">+1 (949) 331-8409</a>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 equA11Y aTs. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu');
+        const overlay = document.getElementById('overlay');
+
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
+        overlay.addEventListener('click', closeMobileMenu);
+
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') !== '#' && this.getAttribute('href') !== '') {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Highlight current page in navigation
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('#main-navigation a, .mobile-menu a');
+        
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.setAttribute('aria-current', 'page');
+                link.classList.add('current-page');
+            }
+        });
+    </script>
+</body>
+</html>

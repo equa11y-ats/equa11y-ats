@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | equA11Y aTs - Accessibility Testing Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Careers_style.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <div id="aria-announce" class="sr-announce" aria-live="polite" aria-atomic="true"></div>
+
+    <header id="main-header">
+        <div class="desktop-header">
+            <a href="https://www.equa11yats.com/" aria-current="page">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>         
+            <div class="header-right">
+                <div class="search-container" role="search" aria-label="Search our website">
+                    <input type="search" id="search" placeholder="Search..." aria-label="Search">
+                    <button class="search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <div class="search-results" id="search-results"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <ul id="main-navigation">
+                <li><a href="OurServices.html">Our Services</a></li>
+                <li><a href="What is Accessibility.html">What is Accessibility</a></li>
+                <li><a href="Why Accessibility.html">Why Accessibility</a></li>
+                <li><a href="A11Y Library.html">A11Y Library</a></li>
+                <li><a href="Foxone USA.html">Foxone USA</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="careers-hero" aria-labelledby="careers-heading">
+            <div class="hero-content">
+                <h1 id="careers-heading">Build Your Career in Accessibility</h1>
+                <p class="hero-subtitle">Join our mission to create a more inclusive digital world. Your work will directly impact millions of users with disabilities.</p>
+                <a href="#job-openings" class="cta-button">View Current Openings</a>
+            </div>
+            <div class="hero-illustration">
+                <div class="illustration-group">
+                    <div class="person person1"></div>
+                    <div class="person person2"></div>
+                    <div class="person person3"></div>
+                    <div class="pathway"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Work With Us -->
+        <section class="benefits-section" aria-labelledby="benefits-heading">
+            <h2 id="benefits-heading" class="section-heading">Why Work With Us</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Meaningful Impact</h3>
+                    <p>Your work will directly improve digital access for people with disabilities worldwide.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Continuous Learning</h3>
+                    <p>Ongoing training and certification opportunities in accessibility standards.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaborative Culture</h3>
+                    <p>Work with passionate experts in a supportive, inclusive environment.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Work-Life Balance</h3>
+                    <p>Flexible schedules and remote work options to suit your lifestyle.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Career Growth</h3>
+                    <p>Clear pathways for advancement in the rapidly growing accessibility field.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Competitive Compensation</h3>
+                    <p>Attractive salary packages with comprehensive benefits and bonuses.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Openings -->
+        <section class="jobs-section" id="job-openings" aria-labelledby="jobs-heading">
+            <h2 id="jobs-heading" class="section-heading">Current Job Openings</h2>
+            
+            <div class="jobs-container">
+                <!-- Job 1 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Senior Accessibility Specialist</h3>
+                        <div class="job-tags">
+                            <span class="tag full-time">Full-time</span>
+                            <span class="tag remote">Remote</span>
+                        </div>
+                    </div>
+                    <div class="job-details">
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Remote (US/EU)</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>$85,000 - $110,000</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Posted 3 days ago</span>
+                        </div>
+                    </div>
+                    <p class="job-description">Conduct comprehensive accessibility audits, provide remediation guidance, and collaborate with development teams to implement WCAG 2.2 AA solutions.</p>
+                    <div class="job-actions">
+                        <a href="#job-details" class="job-details-btn">View Details</a>
+                        <a href="#apply" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Job 2 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Accessibility Developer</h3>
+                        <div class="job-tags">
+                            <span class="tag full-time">Full-time</span>
+                            <span class="tag hybrid">Hybrid</span>
+                        </div>
+                    </div>
+                    <div class="job-details">
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>San Francisco, CA</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>$95,000 - $125,000</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Posted 1 week ago</span>
+                        </div>
+                    </div>
+                    <p class="job-description">Implement accessibility solutions in web applications, create accessible components, and mentor development teams on inclusive coding practices.</p>
+                    <div class="job-actions">
+                        <a href="#job-details" class="job-details-btn">View Details</a>
+                        <a href="#apply" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Job 3 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Accessibility Trainer</h3>
+                        <div class="job-tags">
+                            <span class="tag full-time">Full-time</span>
+                            <span class="tag remote">Remote</span>
+                        </div>
+                    </div>
+                    <div class="job-details">
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Remote (Global)</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>$75,000 - $95,000</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Posted 2 days ago</span>
+                        </div>
+                    </div>
+                    <p class="job-description">Develop and deliver engaging accessibility training programs for designers, developers, and content creators at client organizations.</p>
+                    <div class="job-actions">
+                        <a href="#job-details" class="job-details-btn">View Details</a>
+                        <a href="#apply" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- Job 4 -->
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3>Junior Accessibility Tester</h3>
+                        <div class="job-tags">
+                            <span class="tag full-time">Full-time</span>
+                            <span class="tag remote">Remote</span>
+                        </div>
+                    </div>
+                    <div class="job-details">
+                        <div class="detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Remote (US)</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>$60,000 - $75,000</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Posted 5 days ago</span>
+                        </div>
+                    </div>
+                    <p class="job-description">Perform accessibility testing using various assistive technologies, document issues, and verify fixes under senior team guidance.</p>
+                    <div class="job-actions">
+                        <a href="#job-details" class="job-details-btn">View Details</a>
+                        <a href="#apply" class="apply-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Process -->
+        <section class="process-section" aria-labelledby="process-heading">
+            <h2 id="process-heading" class="section-heading">Our Hiring Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Application Review</h3>
+                    <p>We review your application and qualifications</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Screening Call</h3>
+                    <p>Brief call to discuss your experience and interests</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Skills Assessment</h3>
+                    <p>Practical assignment relevant to the role</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Team Interviews</h3>
+                    <p>Meet with team members and managers</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Offer</h3>
+                    <p>We extend an offer to successful candidates</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section" aria-labelledby="testimonials-heading">
+            <h2 id="testimonials-heading" class="section-heading">What Our Team Says</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Working at equA11Y aTs has given me the opportunity to make a real difference. Every day I see how our work improves people's lives."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Senior Accessibility Specialist, 3 years</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The learning opportunities here are incredible. In just two years, I've earned three accessibility certifications and doubled my salary."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Accessibility Developer, 2 years</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The company culture is amazing. Management genuinely cares about work-life balance and supports flexible schedules."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>Priya Sharma</h4>
+                            <p>Accessibility Trainer, 4 years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section" aria-labelledby="cta-heading">
+            <div class="cta-content">
+                <h2 id="cta-heading">Ready to Make an Impact?</h2>
+                <p>Join our team of accessibility champions and help create a more inclusive digital world.</p>
+                <a href="#apply" class="cta-button">Apply Now</a>
+                <p class="cta-subtext">Don't see your perfect role? <a href="#contact">Send us your resume</a> for future opportunities.</p>
+            </div>
+            <div class="cta-illustration">
+                <div class="illustration-handshake"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div>
+                <h3>Company</h3>
+                <a href="About Us.hmlt">About Us</a>
+                <a href="Our Team.html">Our Team</a>
+                <a href="Careers.html" aria-current="page">Careers</a>
+                <a href="Accessibility Statement.html">Accessibility Statement</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <a href="Accessibility Testing.html">Accessibility Testing</a>
+                <a href="Training.html">Training</a>
+                <a href="Consulting.html">Consulting</a>
+                <a href="Remediation.html">Remediation</a>
+                <a href="Compliance Support.html">Compliance Support</a>
+            </div>
+            <div>
+                <h3>Reach Us</h3>
+                <a href="mailto:equa11yats@gmail.com">equa11yats@gmail.com</a>
+                <a href="tel:+19493318409">+1 (949) 331-8409</a>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 equA11Y aTs. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="Careers_script.js"></script>
+</body>
+</html>

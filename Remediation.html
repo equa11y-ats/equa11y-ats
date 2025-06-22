@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Remediation Services | equA11Y aTs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Remediation.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <div id="aria-announce" class="sr-announce" aria-live="polite" aria-atomic="true"></div>
+
+    <header id="main-header">
+        <div class="mobile-header-top">
+            <button class="hamburger" aria-expanded="false" aria-label="Navigation Menu" id="hamburger-btn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="https://www.equa11yats.com/">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>
+            
+            <div class="mobile-header-right">
+                <div class="mobile-search-container">
+                    <button class="mobile-search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="desktop-header">
+            <a href="https://www.equa11yats.com/">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>         
+            <div class="header-right">
+                <div class="search-container" role="search" aria-label="Search our website">
+                    <input type="search" id="search" placeholder="Search..." aria-label="Search">
+                    <button class="search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <ul id="main-navigation">
+                <li><a href="OurServices.html">Our Services</a></li>
+                <li><a href="What is Accessibility.html">What is Accessibility</a></li>
+                <li><a href="Why Accessibility.html">Why Accessibility</a></li>
+                <li><a href="A11Y Library.html">A11Y Library</a></li>
+                <li><a href="Foxone USA.html">Foxone USA</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="remediation-hero">
+            <div class="hero-content">
+                <h1>Professional Accessibility Remediation Services</h1>
+                <p class="hero-subtitle">Transform your digital properties into inclusive experiences that meet WCAG 2.2 standards</p>
+                <div class="hero-cta">
+                    <a href="#remediation-form" class="cta-button">Get Remediation Quote</a>
+                    <a href="Contact Us.html" class="cta-button secondary">Contact Our Experts</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="remediation-overview">
+            <h2 class="section-heading">Transform Barriers into Accessible Experiences</h2>
+            <div class="overview-content">
+                <div class="overview-text">
+                    <p>Our accessibility remediation services transform inaccessible digital properties into WCAG 2.2 compliant experiences that work for all users. With our expert remediation approach, we don't just fix issues—we rebuild digital experiences with accessibility at their core.</p>
+                    <p>We specialize in remediating complex websites, web applications, mobile apps, and documents to achieve sustainable compliance. Our team of certified accessibility experts combines technical expertise with deep understanding of assistive technologies to deliver solutions that stand the test of time.</p>
+                    <p>Whether you need targeted fixes for specific accessibility barriers or a comprehensive remediation of your entire digital ecosystem, we have the expertise to deliver WCAG-compliant solutions that enhance usability for everyone.</p>
+                </div>
+                <div class="overview-image">
+                    <img src="remediation-process.jpg" alt="Accessibility experts working on remediation solutions">
+                </div>
+            </div>
+        </section>
+
+        <section class="remediation-services">
+            <h2 class="section-heading">Our Remediation Solutions</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Website Remediation</h3>
+                    <p>Comprehensive fixes for websites of all sizes and complexity</p>
+                    <ul class="service-features">
+                        <li>HTML/CSS/JavaScript remediation</li>
+                        <li>Navigation and keyboard accessibility</li>
+                        <li>Form and interactive element fixes</li>
+                        <li>Responsive design enhancements</li>
+                        <li>Color contrast and visual adjustments</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile App Remediation</h3>
+                    <p>Native and hybrid mobile app accessibility solutions</p>
+                    <ul class="service-features">
+                        <li>iOS and Android accessibility fixes</li>
+                        <li>Touch target size adjustments</li>
+                        <li>Screen reader compatibility</li>
+                        <li>Voice control optimization</li>
+                        <li>Dynamic content accessibility</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Document Remediation</h3>
+                    <p>Accessible conversions for all document types</p>
+                    <ul class="service-features">
+                        <li>PDF accessibility remediation</li>
+                        <li>Word and PowerPoint conversions</li>
+                        <li>EPUB and digital publications</li>
+                        <li>Complex table remediation</li>
+                        <li>Tagging and reading order correction</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Code Remediation</h3>
+                    <p>Direct fixes at the source code level</p>
+                    <ul class="service-features">
+                        <li>HTML semantic structure</li>
+                        <li>ARIA implementation and correction</li>
+                        <li>JavaScript accessibility enhancements</li>
+                        <li>Framework-specific solutions</li>
+                        <li>Custom component accessibility</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="remediation-process">
+            <h2 class="section-heading">Our Remediation Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Assessment & Analysis</h3>
+                    <p>Comprehensive audit to identify accessibility barriers and prioritize fixes</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Strategy & Planning</h3>
+                    <p>Develop remediation roadmap with timeline and resource allocation</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Implementation</h3>
+                    <p>Expert remediation of identified issues at code or content level</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Quality Assurance</h3>
+                    <p>Rigorous testing with assistive technologies and automated tools</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Verification & Certification</h3>
+                    <p>Final compliance verification and accessibility certification</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Maintenance Planning</h3>
+                    <p>Establish processes to maintain accessibility compliance</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-studies">
+            <h2 class="section-heading">Remediation Success Stories</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <h3>Financial Services Portal</h3>
+                    <span class="industry">Banking Industry</span>
+                    <p class="challenge">Complex financial application with 500+ accessibility barriers preventing users with disabilities from managing accounts</p>
+                    <p class="solution">Our team implemented comprehensive remediation including complex data table accessibility, form error handling, and keyboard navigation enhancements.</p>
+                    <div class="results">
+                        <h4>Results</h4>
+                        <p>Achieved WCAG 2.2 AA compliance, reduced customer support calls by 40%, and received industry accessibility award.</p>
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <h3>E-Learning Platform</h3>
+                    <span class="industry">Education Technology</span>
+                    <p class="challenge">Video-based learning platform inaccessible to screen reader users and those with motor impairments</p>
+                    <p class="solution">We remediated video player accessibility, added comprehensive captions and transcripts, and redesigned navigation for keyboard and screen reader users.</p>
+                    <div class="results">
+                        <h4>Results</h4>
+                        <p>Platform now accessible to 100% of users, increased engagement by 35%, and achieved VPAT certification.</p>
+                    </div>
+                </div>
+                
+                <div class="case-card">
+                    <h3>Government Portal</h3>
+                    <span class="industry">Public Sector</span>
+                    <p class="challenge">Government website failing Section 508 compliance with 1200+ accessibility issues</p>
+                    <p class="solution">Our experts performed complete remediation including document accessibility, form fixes, and complex navigation restructuring.</p>
+                    <div class="results">
+                        <h4>Results</h4>
+                        <p>Successfully passed Section 508 audit, reduced legal risk, and improved citizen satisfaction scores by 28%.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="remediation-form" id="remediation-form">
+            <div class="form-container">
+                <h2 class="form-heading">Start Your Remediation Project</h2>
+                <p class="form-description">Get a personalized quote for your accessibility remediation needs</p>
+                
+                <form class="remediation-form" id="remediation-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="John Smith" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="john@company.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company" class="form-label">Company</label>
+                        <input type="text" id="company" class="form-input" placeholder="Company Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="platform" class="form-label">Platform Type</label>
+                        <select id="platform" class="form-input" required>
+                            <option value="">Select platform</option>
+                            <option value="website">Website</option>
+                            <option value="webapp">Web Application</option>
+                            <option value="mobile">Mobile App</option>
+                            <option value="documents">Documents</option>
+                            <option value="multiple">Multiple Platforms</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Project Details</label>
+                        <textarea id="message" class="form-input" rows="4" placeholder="Describe your remediation needs..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Request Quote</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div>
+                <h3>Company</h3>
+                <a href="About Us.html">About Us</a>
+                <a href="Our Team.html">Our Team</a>
+                <a href="Careers.html">Careers</a>
+                <a href="Accessibility Statement.html">Accessibility Statement</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <a href="AccessibilityTesting.html">Accessibility Testing</a>
+                <a href="Consulting.html">Consulting</a>
+                <a href="Remediation.html" aria-current="page">Remediation</a>
+                <a href="Training.html">Training</a>
+                <a href="Compliance Support.html">Compliance Support</a>
+            </div>
+            <div>
+                <h3>Reach Us</h3>
+                <a href="mailto:equa11yats@gmail.com">equa11yats@gmail.com</a>
+                <a href="tel:+19493318409">+1 (949) 331-8409</a>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 equA11Y aTs. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="Remediation.js"></script>
+</body>
+</html>

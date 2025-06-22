@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Consulting Services | equA11Y aTs</title>
+    <link rel="stylesheet" href="Consulting.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <div id="aria-announce" class="sr-announce" aria-live="polite" aria-atomic="true"></div>
+
+    <header id="main-header">
+        <div class="mobile-header-top">
+            <button class="hamburger" aria-expanded="false" aria-label="Navigation Menu" id="hamburger-btn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="https://www.equa11yats.com/">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>
+            
+            <div class="mobile-header-right">
+                <div class="mobile-search-container">
+                    <button class="mobile-search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="desktop-header">
+            <a href="https://www.equa11yats.com/">
+                <img src="Logo.png" alt="equA11Y aTs logo, Home Page" class="logo">
+            </a>         
+            <div class="header-right">
+                <div class="search-container" role="search" aria-label="Search our website">
+                    <input type="search" id="search" placeholder="Search..." aria-label="Search">
+                    <button class="search-button" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <div class="nav-container">
+            <ul id="main-navigation">
+                <li><a href="OurServices.html">Our Services</a></li>
+                <li><a href="What is Accessibility.html">What is Accessibility</a></li>
+                <li><a href="Why Accessibility.html">Why Accessibility</a></li>
+                <li><a href="A11Y Library.html">A11Y Library</a></li>
+                <li><a href="Foxone USA.html">Foxone USA</a></li>
+                <li><a href="Contact Us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="consulting-hero">
+            <div class="hero-content">
+                <h1>Strategic Accessibility Consulting Services</h1>
+                <p class="hero-subtitle">Expert guidance to build inclusive digital experiences and achieve sustainable compliance</p>
+                <div class="hero-cta">
+                    <a href="#consultation-section" class="cta-button">Schedule Consultation</a>
+                    <a href="Contact Us.html" class="cta-button secondary">Contact Our Experts</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="consulting-overview">
+            <h2 class="section-heading">Transform Your Digital Accessibility</h2>
+            <div class="overview-content">
+                <div class="overview-text">
+                    <p>Our accessibility consulting services go beyond compliance to help you build inclusive digital experiences that work for everyone. With over a decade of expertise, our certified consultants provide strategic guidance tailored to your organization's unique needs.</p>
+                    <p>We partner with you to develop sustainable accessibility practices that integrate seamlessly into your development lifecycle, reduce legal risk, and open your digital products to the 1.3 billion people worldwide with disabilities.</p>
+                    <p>Whether you're just beginning your accessibility journey or need to mature your existing program, our consultants provide the roadmap and expertise to achieve your goals.</p>
+                </div>
+                <div class="overview-image">
+                    <img src="consulting-team.jpg" alt="Accessibility consultants collaborating with clients">
+                </div>
+            </div>
+        </section>
+
+        <section class="consulting-services">
+            <h2 class="section-heading">Our Consulting Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3>Accessibility Strategy</h3>
+                    <p>Develop a comprehensive roadmap for sustainable accessibility</p>
+                    <ul class="service-features">
+                        <li>Program vision and governance</li>
+                        <li>Policy and standards development</li>
+                        <li>ROI analysis and budgeting</li>
+                        <li>Compliance roadmap</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3>Implementation Guidance</h3>
+                    <p>Technical support for implementing accessibility solutions</p>
+                    <ul class="service-features">
+                        <li>Design system accessibility</li>
+                        <li>Component library reviews</li>
+                        <li>Remediation planning</li>
+                        <li>ARIA implementation</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Training & Enablement</h3>
+                    <p>Custom training programs for your teams</p>
+                    <ul class="service-features">
+                        <li>Role-based accessibility training</li>
+                        <li>WCAG workshops</li>
+                        <li>Assistive technology demos</li>
+                        <li>Accessibility champion programs</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>Compliance & Legal</h3>
+                    <p>Navigate accessibility regulations with confidence</p>
+                    <ul class="service-features">
+                        <li>WCAG 2.2 compliance planning</li>
+                        <li>VPAT® creation assistance</li>
+                        <li>Legal risk assessment</li>
+                        <li>Remediation prioritization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="consulting-benefits">
+            <h2 class="section-heading">Benefits of Our Consulting Approach</h2>
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Strategic Alignment</h3>
+                    <p>We align accessibility with your business objectives to create maximum impact</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Partnership Approach</h3>
+                    <p>We become an extension of your team, not just another vendor</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Expert Guidance</h3>
+                    <p>Leverage our decade of experience across multiple industries</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Operational Efficiency</h3>
+                    <p>Build accessibility into your processes to reduce long-term costs</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="consulting-process">
+            <h2 class="section-heading">Our Consulting Process</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>Understand your current state and objectives</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Assessment</h3>
+                    <p>Evaluate your digital properties and processes</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Strategy</h3>
+                    <p>Develop a customized roadmap for success</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Implementation</h3>
+                    <p>Support execution with expert guidance</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Training</h3>
+                    <p>Empower your teams with knowledge</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Optimization</h3>
+                    <p>Continuously improve your program</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="consultation-form" id="consultation-section">
+            <div class="form-container">
+                <h2 class="form-heading">Schedule Your Free Consultation</h2>
+                <p class="form-description">Let's discuss how we can help you build a more accessible digital presence</p>
+                
+                <form class="consult-form" id="consultation-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" class="form-input" placeholder="John Smith" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-input" placeholder="john@company.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company" class="form-label">Company</label>
+                        <input type="text" id="company" class="form-input" placeholder="Company Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">How can we help?</label>
+                        <textarea id="message" class="form-input" rows="4" placeholder="Tell us about your accessibility needs..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Request Consultation</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div>
+                <h3>Company</h3>
+                <a href="About Us.html">About Us</a>
+                <a href="Our Team.html">Our Team</a>
+                <a href="Careers.html">Careers</a>
+                <a href="Accessibility Statement.html">Accessibility Statement</a>
+                <a href="Privacy Policy.html">Privacy Policy</a>
+            </div>
+            <div>
+                <h3>Services</h3>
+                <a href="AccessibilityTesting.html">Accessibility Testing</a>
+                <a href="Consulting.html" aria-current="page">Consulting</a>
+                <a href="Training.html">Training</a>
+                <a href="Remediation.html">Remediation</a>
+                <a href="Compliance Support.html">Compliance Support</a>
+            </div>
+            <div>
+                <h3>Reach Us</h3>
+                <a href="mailto:equa11yats@gmail.com">equa11yats@gmail.com</a>
+                <a href="tel:+19493318409">+1 (949) 331-8409</a>
+                <div class="social-links">
+                    <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 equA11Y aTs. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="Consulting.js"></script>
+</body>
+</html>
