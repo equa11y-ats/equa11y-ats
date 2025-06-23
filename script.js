@@ -316,10 +316,15 @@ document.getElementById('audit-form').addEventListener('submit', function(e) {
 
     console.log('Sending form data:', { website, email });
 
-    emailjs.send("service_mit5zj7", "template_hlxkirm", {
-        website: website,
-        email: email
-    })
+const now = new Date();
+const deadline = new Date(now.getTime() + 48 * 60 * 60 * 1000);
+
+emailjs.send("service_mit5zj7", "template_hlxkirm", {
+    website: website,
+    email: email,
+    timestamp: now.toLocaleString(),
+    deadline: deadline.toLocaleString()
+})
     .then(function(response) {
         console.log('Email sent successfully!', response);
         successMessage.style.display = 'block';
